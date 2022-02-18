@@ -11,7 +11,7 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
   - [TYPEOF - Ver o tipo da variavél](#typeof)
   - [Valores por referencia](#valores-referencia)
 - [Operadores aritimeticos](#operadores-aritimeticos)
-- [Mensagens](#)
+- [Alerts](#alerts)
 - [String](#)
 - [Numbers](#)
 - [Math](#)
@@ -199,33 +199,35 @@ num **= 2 // 10000
 # Conversão de tipo de dados
 
 ```js
-parseInt('5') //number
-// 5
-parseInt('5.2') //number
-// 5 - Remove a casa decimal
-parseFloat('5.2') //number
-// 5.2
+parseInt('5') //number - 5
+parseInt('5.2') //number - 5 - Remove a casa decimal
+parseFloat('5.2') //number - 5.2
 
 // Melhor maneira
-Number('5') //number
-5
-Number('5.2') //number
-5.2
+Number('5') //number - 5
+Number('5.2') //number - 5.2
+String(50) //string - '50'
 ```
 
-### Alert
+<a id='alerts'></a>
 
-Dentro do objeto window, assim como o método console.log.
+# Alert
+
+É utilizado para trazer mensagens para o usuário na tela. Porém existem jeitos mais elegantes para se fazer isso :3
+
+> Ele habita dentro do objeto window, assim como o método console.log.
 
 - retorna undefined
 
 ```js
-window.alert('teste')
-alert('value')
-alert(1)
+window.alert('alerta')
+alert('alerta')
+alert(123)
 ```
 
-### Confirm
+## Confirm
+
+É bem parecido com o Alert, porém neste existe botões para aceitar, então você pode aceitar ou não oque a caixa flutuante de texto diz.
 
 - retorna um boolean
 
@@ -234,78 +236,168 @@ window.confirm('mensagem')
 confirm('mensagem')
 ```
 
-### prompt
+## prompt
 
-- retorna uma string
+Igualmente parecido com os outros dois citados anteriormente (Alert, Confirm). Aqui é possível inserir valores na caixa de texto flutuante
+
+- retorna uma string, então se você inserir um Number, terá que converter
 
 ```js
 window.prompt('mensagem')
 confirm('mensagem')
 ```
 
-### String
+# String
 
-#### Para escapar um caracter utilize \
-
-```js
-'utilize o \"'
-```
-
-#### Posições
-
-```js
- 012345
-'123456'
-```
-
-#### Concat
-
-```js
-'string' + 'string'
-`${umaString} mais outra string` //mais utilizada
-umaString.concat('string')
-```
-
-#### Endwith
+É um tipo de dado que representa um texto.
 
 ```javascript
-'string'.endsWith('a')
+typeof 'Isso é um texto' // string
+typeof "Isso também é um texto" // string
+typeof `Isso é um texto com números ${123}` // string
+typeof 'Isso também é um texto com números ' + {123} // string
 ```
 
-#### index
+## Escapar um caracter
 
-##### indexOf
+Beleza, as vezes queremos printar esse caracter '\', e se você fizer isso dará problema, pois esse caracter representa outra coisa dentro de uma string, então para isso você utiliza ele da forma abaixo:
+
+```js
+'Barra invertida \\' // Barra invertida \
+'Posso pegar a aspa \' assim' // Posso pegar a aspa ' assim
+```
+
+## Posições / Index
+
+Uma string tem um tamanho e cada caracter tem um posição.
+
+> Uma Srting sempre começa no index 0 
+
+```js
+ 012345678
+'Meu texto'
+```
+
+Então para obter o valor de uma determinada posição podemos fazer da seguinte forma
+
+```javascript
+const meuTexto = 'Meu texto'
+meuTexto[0] // M
+meuTexto[1] // e
+meuTexto[2] // u
+meuTexto[3] //  
+meuTexto[4] // t
+meuTexto[5] // e
+meuTexto[6] // x
+meuTexto[7] // t
+meuTexto[8] // o
+```
+
+### indexOf
+
+Usado para buscar a posição de um valor informado na String
+
+> Ele retornará a primeira posição que achar com o valor que for informado
+
+```js
+const texto = 'teste'
+texto.indexOf('e') //1
+texto.indexOf('w') //-1 - Retorna -1 quando valor não é encontrado
+```
+
+### lastIndexOf
+
+Faz a mesma coisa que o indexOf, porém ele começa a percorrer as posições de trás para frente
 
 ```js
 const valor = 'teste'
-valor.indexOf('e') //1
-valor.indexOf('w') //-1 - Retorna -1 quando valor não é encontrado
+valor.lastIndexOf('e') // 1  
+valor.lastIndexOf('s') // 2
 ```
 
-##### lastIndexOf
+## Concat
+
+Usado para juntar textos
 
 ```js
-const valor = 'teste'
-valor.lastIndexOf('e') //1 - Faz a mesma coisa que o indexOf, porém ele começa a percorrer o array para parte de trás
+'string' + 'string' // Primeira forma
+`${umaString} mais outra string` // Forma mais utilizada
+umaString.concat('outraString') // Terceira forma
 ```
 
-### Expressões regulares
+## Endwith
+
+Para checar se a string acaba com o valor que você informar
+
+> Retorna um boolean
+
+```javascript
+'string'.endsWith('a') // false
+```
+
+## Replace
+
+Usado para trocar valores
+
+```js
+'teste'.replace('s', 'x') // texte
+```
+
+## Length
+
+Pegar o comprimento da string (Conta a quantidade de caracteres)
+
+```javascript
+'teste'.length //5
+```
+
+## Slice
+
+Usado para buscar um range de caracteres
+
+```javascript
+'teste'.slice(2,4) // 's'
+'teste'.slice(1,-1) // este
+```
+
+## Substring
+
+Retorna os valores dentro de um range informado
+
+```javascript
+'teste'.subString(0, 2) // te
+```
+
+## Split
+
+Esse cara aqui consegue fatiar sua string, você escolhe onde ele vai fatiar e pronto :3
+
+```javascript
+
+```
+
+
+# Expressões regulares
 
 ```js
 'teste'.match(/[a-z]/g) // ['t', 'e', 's', 't', 'e']
 'teste'.search(/s/) // 2
-'teste'.replace('s', 'x') // texte
+
 'teste'.replace(/s/, 'x') // texte
 'tessssssste'.replace(/s/g, 'x') // texxxxxxxte
-'teste'.length //5
-'teste'.slice(2,4) // 's'
-'teste'.slice(1,-1) // este
+
+/*
 'teste'.substring(1,2) // e
 'teste'.split('s') // ['te','te']
 'teste'.split('s',1) // ['te']
 'teste'.toUpperCase() // 'TESTE'
 'teste'.toLowerCase() // 'teste'
+*/
 ```
+
+
+
+#
 
 ### Numbers
 
