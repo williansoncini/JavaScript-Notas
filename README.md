@@ -521,40 +521,41 @@ Da para utilizar as cadeias de carateres no replace também
 
 # Numbers
 
-> JavaScript faz as contas com base no padrão IEEE 754-2008. Existe sempre uma imprecisão na hora de calcular numéros flutuantes
+> JavaScript faz as contas com base no padrão IEEE 754-2008. Existe sempre uma pequena imprecisão na hora de calcular numéros flutuantes abaixo de 1 (Com cadas decimais).
 
 ```javascript
 let num1 = 10 // number
 let num2 = 10.0123012 // number
 ```
 
-#### Numero para string
+## Numero para string
 
 ```javascript
 let num = 10 
-num.toString()
+num.toString() // '10'
 ```
 
-#### Arrendondar casas decimais
+## Casas decimais
+
+### tofixed - Escolher quantas casas decimais aparecer
 
 ```javascript
 let num = 10.123124324
 num.toFixed(2) // 10.12
-
 //number.toFixed(numero_casas_decimais)
 ```
 
-#### Saber se o numéro é inteiro
+## Saber se o numéro é inteiro
 
 ```javascript
 let num1 = 10
 Number.isInteger(num1) // true
 
 let num2 = 10.312
-Number.isInterger(num2) //false -  É um Number
+Number.isInterger(num2) //false -  É um Number (Casas decimais)
 ```
 
-#### Saber ser é um NaN (Not a number)
+## Saber ser é um NaN (Not a number)
 
 ```javascript
 const ola = 'ola'
@@ -564,7 +565,7 @@ const num = 10
 Number.isNaN(num) //false
 ```
 
-#### IEEE 754-2008
+## Padrão de calculo - IEEE 754-2008
 
 ```javascript
 let num1 = 0.1
@@ -577,21 +578,33 @@ console.log(Number((num1 + num2).toFixed(2)) //Pouco elegante mas funciona
 (num1 * 100) + (num2 * 100) / 100 // 0.4 - Muito pouco elegante, mas funciona
 ```
 
-### Math
+# Math
 
-#### Arrendondar numeros
+## Arrendondar numeros
 
-```javascript
-let num1 = 9.4561
-//para baixo
-let num2 = Math.floor(num1) //9
-//para cima
-let num3 = Math.ceil(num1) //10 
-//Arredondar para o mais próximo
-let num4 = Math.round(num1) //9
+### Para baixo - Math.floor
+
+```js
+Math.floor(9.123) // 9
 ```
 
-#### Achar maior e menor numero
+### Para cima - Math.ceil
+
+```js
+Math.ceil(9.123) // 10
+```
+
+### Para o mais próximo - Math.round
+
+- Abaixo de 50 arredonda par abaixo
+- Acima de 0.49 arredonda para cima
+
+```javascript
+Math.round(0.49) // 0
+Math.round(0.50) // 1
+```
+
+## Achar maior e menor numero
 
 ```javascript
 let numbers = [1,2,3,4,5,6]
@@ -599,31 +612,50 @@ Math.min(numbers) //1
 Math.max(numbers) // 6
 ```
 
-#### Gerar numeros aleatórios
+## Gerar numeros aleatórios
 
 ```javascript
-Math.rendom() //0.56487434
+Math.random() // 0.56487434
 //gerar aleatório em um intervalo
+Math.random() * (max - min) + min
+//exemplo
 const number = Math.random()* (10 - 5) + 5 // numeros entre 5 e 10
 ```
 
-#### Elevar numero
+## Potenciação
 
 ```javascript
 Math.pow(2,2) // 4
-// Mas assim também
+// Mas assim também da certo
 2**2 // 4
 ```
 
-#### Divisão por zero
+## Divisão por zero
 
-> É necessário tomar cuidado, pois o JavaScript permite a divisão por zero classificando a variavel como infinity
+> É necessário tomar cuidado, pois o JavaScript permite a divisão por zero classificando a variavel como infinity e true
 
 ```js
 10 / 0 // Infinity - true
 ```
 
-### Arrays
+### Tratando divisão por zero
+
+[Maneira citada StackOverflow por Mike Samuel](#https://stackoverflow.com/questions/8072323/best-way-to-prevent-handle-divide-by-0-in-javascript)
+
+```js
+function notZero(n) {
+  n = +n;  // Coerce to number.
+  if (!n) {  // Matches +0, -0, NaN
+    throw new Error('Invalid dividend ' + n);
+  }
+  return n;
+}
+
+numerator / notZero(denominator)
+```
+
+
+# Arrays
 
 > Deve tomar cuidado com atribuições diretas, isso ocasiona em ponteiros. Então tudo oque você fizer em uma variavel ira refletir na outra. Para isso existem maneiras corretas descritas abaixo para fazer a atribuição de valores.
 
@@ -631,17 +663,17 @@ Math.pow(2,2) // 4
 const users = ['Albert', 'Nikola', 'Leonardo', 1, 2, 3] //Da para colocar oque quiser aqui no meio
 users[0] //Albert
 users[0] = 'Einstein'
-
+users[0] // Einstein
 ```
 
-#### Obter valores do array
+## Obter valores do array
 
 ```javascript
 const users = ['Albert']
-users[0] //albert
+users[0] // Albert
 ```
 
-#### Mudando os valores do array
+## Mudando os valores do array
 
 ```javascript
 const users  = ['Albert']
@@ -649,15 +681,35 @@ users[0] = ['Nikola']
 users[0] // Nikola
 ```
 
-#### Passando valores entre arrays
+## Passando valores entre arrays
+
+Aqui é necessário ter atenção, para não referenciar diretamente um array a outra variavél. Pois dessa forma a variavel vai apontar para o mesmo endereco de memoria do array.
+
+Exemplo
 
 ```js
 const array_1 = [1,2,3]
-const array_2 = [...array_1] // maneira correta de se fazer
-array_2 // [1,2,3]
+const array_2 = array_1
+
+array_2[2] = 123123123
+
+// Eles teram os mesmo valores, pois as duas variaveis apontam para o mesmo endereco de memoria
+array_1 // [1,2,123123123]
+array_2 // [1,2,123123123]
 ```
 
-#### Comprimento do array
+**Maneira correta de se passar o valor do array**
+
+```js
+const array_1 = [1,2,3]
+const array_2 = [...array_1] // maneira correta de se fazer (Esse ... é o operador de espalhar as coisas)
+array_2[2] = 123123123
+
+array_1 // [1,2,3]
+array_2 // [1,2,123123123]
+```
+
+## Comprimento do array
 
 ```javascript
 const users = ['Albert', 'Nikola', 'Leonardo']
