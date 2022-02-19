@@ -4,18 +4,47 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
 
 ## Tópicos
 
-- [Console.log](#console.log)
+- [console.log](#console.log)
 - [Comentários](#comentarios)
 - [Variáveis](#variaveis)
+  - [let] (#let)
+  - [const] (#let)
+  - [var] (#let)
 - [Tipos primitivos](#tipos-primitivos)
-  - [TYPEOF - Ver o tipo da variavél](#typeof)
+  - [typeof - Ver o tipo da variavél](#typeof)
   - [Valores por referencia](#valores-referencia)
 - [Operadores aritimeticos](#operadores-aritimeticos)
-- [Alerts](#alerts)
-- [String](#)
+  - [Concatenação](#concatenacao)
+  - [Adição e subtração](#adicao-subtracao)
+  - [Potenciacao](#potenciacao)
+  - [Resto da divisão](#resto-divisao)
+  - [Incremento e decremento](#incremento-decremento)
+- [Conversão de tipos de dados](#conversao-tipo-dados)
+- [Alerts](#alerts
+  - [alert](#alert)
+  - [confirm](#confirm)
+  - [prompt](#prompt)
+- [String](#string)
+  - [Escapar um caracter](#escapar-caracter)
+  - [Posição / index](#posicao-index)
+    - [indexOf](#indexof)
+    - [lastIndexOf](#lastindexof)
+  - [concat](#concat) 
+  - [endsWith](#endsWith) 
+  - [replace](#replace) 
+  - [length](#length) 
+  - [slice](#slice) 
+  - [subString](#subString) 
+  - [split](#split) 
+  - [toUpperCase](#split) 
+  - [toLowerCase](#split) 
+- [Expressões regulares](#expressoes-regulares)
+  - [match](#match)
+  - [search](#search)
+  - [replace com regex](#replace-regex)
 - [Numbers](#)
 - [Math](#)
-- [Operadores lógicoso](#)
+- [Operadores lógicos](#)
 - [Switchs](#)
 - [Estrutura de repetição](#)
 - [Break e continue](#)
@@ -63,6 +92,8 @@ console.log(` 'tudo isso' "é um print" ${variable}`);
 
 > Em váriaveis geralmente se utiliza camelCase, por exemplo: **nomeVariavel**
 
+<a id='let'></a>
+
 ## **LET**
 
 - Podem ser iniciliadas vazias
@@ -75,6 +106,8 @@ nome = 'Albert';
 let sobreNome = 'Einstein';
 ```
 
+<a id='const'></a>
+
 ## **CONST**
 
 - Não pode ser inicializada vazia
@@ -85,6 +118,8 @@ let sobreNome = 'Einstein';
 const nome = 'Einstein';
 const dez =  10;
 ```
+
+<a id='var'></a>
 
 ## **VAR**
 
@@ -148,12 +183,16 @@ console.log(a,b) // [1,2,3,4] [1,2,3,4]
 - **-**  Terceiro
 - **+**  Quarto
 
+<a id='concatenacao'></a>
+
 ## Contatenação utilizando strings
 
 ```js
-console.log('Albert' +  ' ' + 'Einstein') // Albert Einstein
-console.log('Albert' + 1) // Albert1
+console.log('Albert' +  ' ' + 'Einstein') // 'Albert Einstein'
+console.log('Albert ' + 1) // 'Albert 1'
 ```
+
+<a id='adicao-subtracao'></a>
 
 ## Adição e subtração
 
@@ -164,17 +203,23 @@ console.log(20 - 10) // 10
 console.log('10' - 10) // 0 Conversão novamente
 ```
 
+<a id='potenciacao'></a>
+
 ## Potenciação
 
 ```js
 console.log(2**2) // 4
 ```
 
+<a id='resto-divisao'></a>
+
 ## Resto da divisão
 
 ```js
 console.log(10 % 3) // 1
 ```
+
+<a id='incremento-decremento'></a>
 
 ## Incremento decremento
 
@@ -211,6 +256,8 @@ String(50) //string - '50'
 
 <a id='alerts'></a>
 
+<a id='alert'></a>
+
 # Alert
 
 É utilizado para trazer mensagens para o usuário na tela. Porém existem jeitos mais elegantes para se fazer isso :3
@@ -225,6 +272,8 @@ alert('alerta')
 alert(123)
 ```
 
+<a id='confirm'></a>
+
 ## Confirm
 
 É bem parecido com o Alert, porém neste existe botões para aceitar, então você pode aceitar ou não oque a caixa flutuante de texto diz.
@@ -235,6 +284,8 @@ alert(123)
 window.confirm('mensagem')
 confirm('mensagem')
 ```
+
+<a id='prompt'></a>
 
 ## prompt
 
@@ -247,6 +298,8 @@ window.prompt('mensagem')
 confirm('mensagem')
 ```
 
+<a id='string'></a>
+
 # String
 
 É um tipo de dado que representa um texto.
@@ -258,6 +311,8 @@ typeof `Isso é um texto com números ${123}` // string
 typeof 'Isso também é um texto com números ' + {123} // string
 ```
 
+<a id='escapar-caracter'></a>
+
 ## Escapar um caracter
 
 Beleza, as vezes queremos printar esse caracter '\', e se você fizer isso dará problema, pois esse caracter representa outra coisa dentro de uma string, então para isso você utiliza ele da forma abaixo:
@@ -266,6 +321,8 @@ Beleza, as vezes queremos printar esse caracter '\', e se você fizer isso dará
 'Barra invertida \\' // Barra invertida \
 'Posso pegar a aspa \' assim' // Posso pegar a aspa ' assim
 ```
+
+<a id='posicao-index'></a>
 
 ## Posições / Index
 
@@ -293,6 +350,8 @@ meuTexto[7] // t
 meuTexto[8] // o
 ```
 
+<a id='indexof'></a>
+
 ### indexOf
 
 Usado para buscar a posição de um valor informado na String
@@ -305,6 +364,8 @@ texto.indexOf('e') //1
 texto.indexOf('w') //-1 - Retorna -1 quando valor não é encontrado
 ```
 
+<a id='lastindexof'></a>
+
 ### lastIndexOf
 
 Faz a mesma coisa que o indexOf, porém ele começa a percorrer as posições de trás para frente
@@ -315,7 +376,9 @@ valor.lastIndexOf('e') // 1
 valor.lastIndexOf('s') // 2
 ```
 
-## Concat
+<a id='concat'></a>
+
+## concat
 
 Usado para juntar textos
 
@@ -324,6 +387,8 @@ Usado para juntar textos
 `${umaString} mais outra string` // Forma mais utilizada
 umaString.concat('outraString') // Terceira forma
 ```
+
+<a id='endwith'></a>
 
 ## Endwith
 
@@ -335,7 +400,9 @@ Para checar se a string acaba com o valor que você informar
 'string'.endsWith('a') // false
 ```
 
-## Replace
+<a id='replace'></a>
+
+## replace
 
 Usado para trocar valores
 
@@ -343,7 +410,9 @@ Usado para trocar valores
 'teste'.replace('s', 'x') // texte
 ```
 
-## Length
+<a id='length'></a>
+
+## length
 
 Pegar o comprimento da string (Conta a quantidade de caracteres)
 
@@ -351,7 +420,9 @@ Pegar o comprimento da string (Conta a quantidade de caracteres)
 'teste'.length //5
 ```
 
-## Slice
+<a id='slice'></a>
+
+## slice
 
 Usado para buscar um range de caracteres
 
@@ -360,7 +431,9 @@ Usado para buscar um range de caracteres
 'teste'.slice(1,-1) // este
 ```
 
-## Substring
+<a id='subString'></a>
+
+## subString
 
 Retorna os valores dentro de um range informado
 
@@ -368,38 +441,85 @@ Retorna os valores dentro de um range informado
 'teste'.subString(0, 2) // te
 ```
 
-## Split
+<a id='split'></a>
 
-Esse cara aqui consegue fatiar sua string, você escolhe onde ele vai fatiar e pronto :3
+## split
+
+Esse cara aqui consegue fatiar sua string, você informar em qual caracter ele vai fatiar e pronto :3
+
+> Retorna um array
 
 ```javascript
-
+'isso vai cortar'.split(' ') // ['isso', 'vai', 'cortar']
 ```
 
+<a id='toUpperCase'></a>
+
+## toUpperCase
+
+Função utilizada para deixar em maiusculo
+
+```js
+'teste'.toUpperCase() // 'TESTE'
+```
+
+<a id='toLowerCase'></a>
+
+## toLowerCase
+
+função utilizada para deixar em minusculo
+
+```js
+'TESTE'.toLowerCase()
+```
+
+<a id='expressoes-regulares'></a>
 
 # Expressões regulares
 
+<a id='match'></a>
+
+## match
+
+Usado para encontrar uma cadeia de caracteres (Regex) em uma string.
+
+> Retorna um array
+
 ```js
+//Encontrar somente as letras minusculas
 'teste'.match(/[a-z]/g) // ['t', 'e', 's', 't', 'e']
-'teste'.search(/s/) // 2
-
-'teste'.replace(/s/, 'x') // texte
-'tessssssste'.replace(/s/g, 'x') // texxxxxxxte
-
-/*
-'teste'.substring(1,2) // e
-'teste'.split('s') // ['te','te']
-'teste'.split('s',1) // ['te']
-'teste'.toUpperCase() // 'TESTE'
-'teste'.toLowerCase() // 'teste'
-*/
+//Encontrar letras minusculas e maisculas
+'Teste'.match(/[a-zA-Z]/g) //['T', 'e', 's', 't', 'e']
+//Encontrar números
+'tenho 1 número'.match(/[0-9]/g) // [1]
 ```
 
+<a id='search'></a>
 
+## search
 
-#
+Usado para encontrar um valor, passando como parametro uma cadeia de caracteres (Regex)
 
-### Numbers
+> Retonar o index / posição do elemento encontrado
+
+```js
+'Teste'.search(/s/) 2
+```
+
+<a id='replace-regex'></a>
+
+## Replace com regex
+
+Da para utilizar as cadeias de carateres no replace também
+
+```js
+// Trocar a primeira letra 's' para 'x'
+'tesssste'.replace(/s/, 'x') // texssste
+// Trocar todas as letras 's' para 'x'
+'tesssste'.replace(/s/g, 'x') // texxxxte
+```
+
+# Numbers
 
 > JavaScript faz as contas com base no padrão IEEE 754-2008. Existe sempre uma imprecisão na hora de calcular numéros flutuantes
 
