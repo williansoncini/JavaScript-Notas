@@ -42,25 +42,38 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
   - [match](#match)
   - [search](#search)
   - [replace com regex](#replace-regex)
-- [Numbers](#)
-- [Math](#)
-- [Operadores lógicos](#)
-- [Switchs](#)
-- [Estrutura de repetição](#)
-- [Break e continue](#)
-- [Try Catch finally](#)
-- [DOM](#)
-- [Arrays](#)
-- [Function](#)
-- [Objects](#)
-- [Prototypes](#)
-- [Atribuição via desestruturação](#)
-- [Import & Export](#)
-- [JSON](#)
-- [LocalStorage](#)
-- [Promise](#)
-- [Requisições](#)
-- [Compiladores e transpiladores](#)
+- [Numbers](#numbers)
+  - [Numero para string](#numero-string)
+  - [Casas decimais](#casas-decimais)
+    - [tofixed - Escolher quantas casas decimais aparecer](#tofixed)   
+  - [Saber se o numéro é inteiro](#saber-numero-inteiro)
+  - [Saber ser é um NaN (Not a number)](#saber-nan)
+  - [Padrão de calculo - IEEE 754-2008](#padrao-calculo)
+- [Math](#math)
+  - [Arrendondar numeros](#arredondar-numeros)
+    - [Para baixo - Math.floor](#para-baixo)
+    - [Para cima - Math.ceil](#para-cima)
+    - [Para o mais próximo - Math.round](#para-mais-proximo)
+  - [Achar maior e menor numero](#achar-maior-menor-numero)
+  - [Gerar numeros aleatórios](#gerar-aleatorio)
+  - [Potenciação](#potenciacao)
+  - [Divisão por zero](#divisao-zero)
+    - [Tratando divisão por zero](#tratamento-divisao-zero)
+- [Arrays](#arrays)
+  - [Obter valores do array](#obter-valores-array)
+  - [Mudando os valores do array](#mudando-valores-array)
+  - [Passando valores entre arrays](#passando-valores-arrays)
+  - [Comprimento do array - length](#comprimento-array)
+  - [Inserir valores no array - push/unshift](#inserir-valores-array)
+  - [Romover valores do array - pop/shift/delete](#remover-valores-array)
+  - [Fatiar um array - slice](#fatiar-array)
+  - [Checkar instancia de array](#checar-instancia-array)
+  - [Remover e inserir valores - Splice](#remover-inserir-valores-splice)
+  - [Concatenar array](#concatenar-array)
+  - [Filtrar o array](#filtrar-array)
+  - [Mapear o array](#mapear-array)
+  - [Reduce](#reduce)
+  - [Foreach](#foreach)
 
 <a id='console.log'></a>
 
@@ -519,6 +532,8 @@ Da para utilizar as cadeias de carateres no replace também
 'tesssste'.replace(/s/g, 'x') // texxxxte
 ```
 
+<a id='numbers'></a>
+
 # Numbers
 
 > JavaScript faz as contas com base no padrão IEEE 754-2008. Existe sempre uma pequena imprecisão na hora de calcular numéros flutuantes abaixo de 1 (Com cadas decimais).
@@ -528,6 +543,8 @@ let num1 = 10 // number
 let num2 = 10.0123012 // number
 ```
 
+<a id='numero-string'></a>
+
 ## Numero para string
 
 ```javascript
@@ -535,7 +552,11 @@ let num = 10
 num.toString() // '10'
 ```
 
+<a id='casas-decimais'></a>
+
 ## Casas decimais
+
+<a id='tofixed'></a>
 
 ### tofixed - Escolher quantas casas decimais aparecer
 
@@ -544,6 +565,8 @@ let num = 10.123124324
 num.toFixed(2) // 10.12
 //number.toFixed(numero_casas_decimais)
 ```
+
+<a id='saber-numero-inteiro'></a>
 
 ## Saber se o numéro é inteiro
 
@@ -555,6 +578,8 @@ let num2 = 10.312
 Number.isInterger(num2) //false -  É um Number (Casas decimais)
 ```
 
+<a id='saber-nan'></a>
+
 ## Saber ser é um NaN (Not a number)
 
 ```javascript
@@ -564,6 +589,8 @@ Number.isNaN(ola) //true
 const num = 10
 Number.isNaN(num) //false
 ```
+
+<a id='padrao-calculo'></a>
 
 ## Padrão de calculo - IEEE 754-2008
 
@@ -578,9 +605,15 @@ console.log(Number((num1 + num2).toFixed(2)) //Pouco elegante mas funciona
 (num1 * 100) + (num2 * 100) / 100 // 0.4 - Muito pouco elegante, mas funciona
 ```
 
+<a id='math'></a>
+
 # Math
 
+<a id='arredondar-numeros'></a>
+
 ## Arrendondar numeros
+
+<a id='para-baixo'></a>
 
 ### Para baixo - Math.floor
 
@@ -588,11 +621,15 @@ console.log(Number((num1 + num2).toFixed(2)) //Pouco elegante mas funciona
 Math.floor(9.123) // 9
 ```
 
+<a id='para-cima'></a>
+
 ### Para cima - Math.ceil
 
 ```js
 Math.ceil(9.123) // 10
 ```
+
+<a id='para-mais-proximo'></a>
 
 ### Para o mais próximo - Math.round
 
@@ -604,6 +641,8 @@ Math.round(0.49) // 0
 Math.round(0.50) // 1
 ```
 
+<a id='achar-maior-menor-numero'></a>
+
 ## Achar maior e menor numero
 
 ```javascript
@@ -611,6 +650,8 @@ let numbers = [1,2,3,4,5,6]
 Math.min(numbers) //1
 Math.max(numbers) // 6
 ```
+
+<a id='gerar-aleatorio'></a>
 
 ## Gerar numeros aleatórios
 
@@ -622,6 +663,8 @@ Math.random() * (max - min) + min
 const number = Math.random()* (10 - 5) + 5 // numeros entre 5 e 10
 ```
 
+<a id='potenciacao'></a>
+
 ## Potenciação
 
 ```javascript
@@ -630,6 +673,8 @@ Math.pow(2,2) // 4
 2**2 // 4
 ```
 
+<a id='divisao-zero'></a>
+
 ## Divisão por zero
 
 > É necessário tomar cuidado, pois o JavaScript permite a divisão por zero classificando a variavel como infinity e true
@@ -637,6 +682,8 @@ Math.pow(2,2) // 4
 ```js
 10 / 0 // Infinity - true
 ```
+
+<a id='tratamento-divisao-zero'></a>
 
 ### Tratando divisão por zero
 
@@ -654,6 +701,7 @@ function notZero(n) {
 numerator / notZero(denominator)
 ```
 
+<a id='arrays'></a>
 
 # Arrays
 
@@ -666,12 +714,16 @@ users[0] = 'Einstein'
 users[0] // Einstein
 ```
 
+<a id='obter-valores-array'></a>
+
 ## Obter valores do array
 
 ```javascript
 const users = ['Albert']
 users[0] // Albert
 ```
+
+<a id='mudando-valores-array'></a>
 
 ## Mudando os valores do array
 
@@ -680,6 +732,8 @@ const users  = ['Albert']
 users[0] = ['Nikola']
 users[0] // Nikola
 ```
+
+<a id='passando-valores-arrays'></a>
 
 ## Passando valores entre arrays
 
@@ -693,34 +747,41 @@ const array_2 = array_1
 
 array_2[2] = 123123123
 
-// Eles teram os mesmo valores, pois as duas variaveis apontam para o mesmo endereco de memoria
+// Eles teram os mesmo valores, pois as duas variaveis apontam para o mesmo endereço de memoria
 array_1 // [1,2,123123123]
 array_2 // [1,2,123123123]
 ```
 
-**Maneira correta de se passar o valor do array**
+**Uma das maneiras correta de se passar o valor do array para outra variavél**
 
 ```js
 const array_1 = [1,2,3]
-const array_2 = [...array_1] // maneira correta de se fazer (Esse ... é o operador de espalhar as coisas)
+const array_2 = [...array_1] // maneira correta de se fazer 
 array_2[2] = 123123123
 
 array_1 // [1,2,3]
 array_2 // [1,2,123123123]
 ```
 
-## Comprimento do array
+> Esses ... que está antes de array_1 [...array_1] significa que todo o valor de array_1 será espalhado, e como no caso a variável array_2 está recebendo [...array_1], significa que o valor de array_1 será espalhado dentro de array_2.
+
+<a id='comprimento-array'></a>
+
+## Comprimento do array - length
 
 ```javascript
 const users = ['Albert', 'Nikola', 'Leonardo']
 users.length //3
 ```
 
-#### Inserir valores
+<a id='inserir-valores-array'></a>
+
+## Inserir valores no array - push/unshift
 
 ```javascript
-//Inserir no final
 const users = ['Albert', 'Nikola']
+
+//Inserir no final
 users.push('Leonardo')
 users // ['Albert', 'Nikola', 'Leonardo']
 
@@ -729,12 +790,15 @@ users.unshift('Thomas')
 users // ['Thomas', 'Albert', 'Nikola', 'Leonardo']
 ```
 
-#### Romover valores do array
+<a id='remover-valores-array'></a>
+
+## Romover valores do array - pop/shift/delete
 
 ```javascript
-//Remover do final
 const users = ['Albert', 'Nikola', 'Leonardo']
-// pop retorna o valore removido
+
+//Remover do final
+// pop retorna o valor removido
 users.pop()
 users // ['Albert', 'Nikola']
 
@@ -748,7 +812,11 @@ delete users[0]
 users // [<emptyitem>]
 ```
 
-#### Fatiar um array
+<a id='fatiar-array'></a>
+
+## Fatiar um array - slice
+
+Quando o array é fatiado pelo metodo slice, ele não tem o seu valor realmente modificado,  slice apenas retorna os valores entre o intervalo que você informar.
 
 ```js
 const users = ['Albert', 'Nikola', 'Leonardo'] 
@@ -756,41 +824,49 @@ users.slice(0,2) // ['Albert' , 'Nikola']
 users.slice(0,-1) // ['Albert', 'Nikola', 'Leonardo'] 
 ```
 
-#### Checkar instancia de array
+> -1 Inidica a última posição do array
+
+<a id='checar-instancia-array'></a>
+
+## Checkar instancia de array
 
 ```javascript
 const users = ['Albert', 'Nikola']
-users instanceof Array //true
+users instanceof Array // true
 ```
 
-#### Metodos do array
+<a id='remover-inserir-valores-splice'></a>
 
-##### Splice
+## Remover e inserir valores - Splice
+
+Esse método pode remover ou inserir valores.
 
 ```javascript
-// array.splice(indice, delete, addElement, addElement, addElement)
+// array.splice(posicao_inicial, quantidade_elementos_a_deletar, addElement, addElement, addElement)
 const array = [1,2,3,4,5]
-const removed = array.splice(3,2)
+const elementos_removidos = array.splice(3,2)
 array // [1,2,3]
-removed // [4,5]
+elementos_removidos // [4,5]
 
-//example with MAX_VALUE
+//Example utilizando MAX_VALUE
 const array = [1,2,3,4,5]
-const removed = array.splice(2, Number.MAX_VALUE)
-removed // [3,4,5]
+const elementos_removidos = array.splice(2, Number.MAX_VALUE)
+elementos_removidos // [3,4,5]
 
-//add value
+//Adicionando valores com splice
 const array = [1,2,3,4,5]
 array.splice(3,0,'value')
 array // [ 1, 2, 3, 'value', 4, 5 ]
 
-//alter value and add value
+//Removendo e adicionando ao mesmo tempo
 const array = [1,2,3,4,5]
 array.splice(3,2,'Albert', 'Nikola')
 array // [1,2,3,'Albert', 'Nikola']
 ```
 
-##### Concatenar array
+<a id='concatenar-array'></a>
+
+## Concatenar array
 
 ```javascript
 const array1 = [1,2,3,4]
@@ -799,12 +875,14 @@ const array2 = [5,6,7,8]
 array1.concat(array2) // [1,2,3,4,5,6,7,8 ]
 ```
 
-##### Filtrar o array
+<a id='filtrar-array'></a>
+
+## Filtrar o array
 
 > Sempre retorna um array
 
 ```javascript
-//classic form
+//forma classica
 const array = [1,2,3,4,5]
 
 function callBackFilter(value, index, array){
@@ -814,7 +892,7 @@ function callBackFilter(value, index, array){
 const newArray = array.filter(callBackFilter)
 newArray // [3,4,5]
 
-//elegant form
+//Forma mais elegante
 const array = [1,2,3,4,5]
 
 const newArray = array.filter(value => value > 2)
@@ -829,7 +907,11 @@ const newArray = array.filter((value, index, array) => {
 })
 ```
 
-##### Mapear o array
+<a id='mapear-array'></a>
+
+## Mapear o array
+
+Esse método permite passar por todas as posições do array. É bem parecido com um for, você também pode colocar sua lógica para ser executada em cada posição.
 
 > Sempre retorna um array
 
@@ -840,12 +922,12 @@ array.map((value,index,array) => {
     return value
 })
 
-// example - Double value
+// Exemplo - retonar um novo array que valores dobrados
 const array = [1,2,3]
 const newArray = array.map(value => value * 2)
 newArray // [2,4,6]
 
-// example - Return just name of object
+// Exemplo - Retornar apernas o nome dos objetos
 const peoples = [
     {name: 'Albert', surname: 'Einstein'},
     {name: 'Nikola', surname: 'Tesla'}
@@ -855,11 +937,16 @@ const arrayWithNames = peoples.map(value => value.name)
 arrayWithNames // ['Albert', 'Nikola']
 ```
 
-##### Reduce
+<a id='reduce'></a>
+
+## Reduce
+
+Permite você por todas as posições, e também ter um único retorno. Por exemplo fazer a soma de todos os valores dentro do array, aqui teremos um unico retorno que será o valor total.
 
 > Reduzir array a um elemento
 
 ```javascript
+// Exemplo de soma
 const array = [1,2,3]
 const total = array.reduce(function(acumulador, valor, indice, array){
     acumulador += valor
@@ -867,32 +954,34 @@ const total = array.reduce(function(acumulador, valor, indice, array){
 })
 total // 6
 
-// example - 
+// Exemplo de retorno de array
 const array = [1,2,3]
 const anotherArray = array.reduce(function(acumulator, value ){
     acumulador.push(value)
     return acumulador
-}, [] )//initial value of acumulator)
+}, [] )// Valor inicial do acumulador)
 anotherArray // [1,2,3]
 
-//example - return most old
+// Exemplo - Retornar o mais velho
 const pessoas = [
     {name: 'Albert', age: 76},
     {name: 'Nikola', age: 86},
     {name: 'Isaac', age: 84}
 ]
 
-const maisVelha = pessoas.reduce(function(acumulador, valor){
+const pessoaMaisVelha = pessoas.reduce(function(acumulador, valor){
     // O acumulador sempre inicia pegando o valor da primeira posição
     // O 'Valor' sempre inicia pegando o valor da segunda posição
     if (acumulador.age > valor.age) return acumulador
     return valor
 })
 
-maisVelha // {name: Nikola, age: 86}
+pessoaMaisVelha // {name: Nikola, age: 86}
 ```
 
-##### Foreach
+<a id='foreach'></a>
+
+## Foreach
 
 > Apenas passa sobre o array, assim como um for clássico
 
