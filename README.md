@@ -2,78 +2,207 @@
 
 Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado com o passar do tempo. Espero que gostem, e o repo está publico, então se quiser contribuir com alguma nota fique avontade! **É tudo nosso!** 🚀📚
 
-## Tópicos
+# Tópicos
 
-- [console.log](#console.log)
-- [Comentários](#comentarios)
-- [Variáveis](#variaveis)
-  - [let](#let)
-  - [const](#let)
-  - [var](#let)
-- [Tipos primitivos](#tipos-primitivos)
-  - [typeof - Ver o tipo da variavél](#typeof)
-  - [Valores por referencia](#valores-referencia)
+- [Notas delicinhas de Js **:3**](#notas-delicinhas-de-js-3)
+- [Tópicos](#tópicos)
+- [Console log](#console-log)
+- [Comentários](#comentários)
+- [Variáveis](#variáveis)
+  - [**LET**](#let)
+  - [**CONST**](#const)
+  - [**VAR**](#var)
+- [Tipos de dados primitivos](#tipos-de-dados-primitivos)
+  - [**TYPEOF** - Ver o tipo da variavél](#typeof---ver-o-tipo-da-variavél)
+  - [Valores por referencia](#valores-por-referencia)
 - [Operadores aritimeticos](#operadores-aritimeticos)
-  - [Concatenação](#concatenacao)
-  - [Adição e subtração](#adicao-subtracao)
-  - [Potenciacao](#potenciacao)
-  - [Resto da divisão](#resto-divisao)
-  - [Incremento e decremento](#incremento-decremento)
-- [Conversão de tipos de dados](#conversao-tipo-dados)
-- [Alerts](#alerts)
-  - [alert](#alert)
-  - [confirm](#confirm)
+  - [Contatenação utilizando strings](#contatenação-utilizando-strings)
+  - [Adição e subtração](#adição-e-subtração)
+  - [Potenciação](#potenciação)
+  - [Resto da divisão](#resto-da-divisão)
+  - [Incremento decremento](#incremento-decremento)
+- [Conversão de tipo de dados](#conversão-de-tipo-de-dados)
+- [Alert](#alert)
+  - [Confirm](#confirm)
   - [prompt](#prompt)
 - [String](#string)
-  - [Escapar um caracter](#escapar-caracter)
-  - [Posição / index](#posicao-index)
+  - [Escapar um caracter](#escapar-um-caracter)
+  - [Posições / Index](#posições--index)
     - [indexOf](#indexof)
     - [lastIndexOf](#lastindexof)
-  - [concat](#concat) 
-  - [endsWith](#endsWith) 
-  - [replace](#replace) 
-  - [length](#length) 
-  - [slice](#slice) 
-  - [subString](#subString) 
-  - [split](#split) 
-  - [toUpperCase](#split) 
-  - [toLowerCase](#split) 
-- [Expressões regulares](#expressoes-regulares)
+  - [concat](#concat)
+  - [Endwith](#endwith)
+  - [replace](#replace)
+  - [length](#length)
+  - [slice](#slice)
+  - [subString](#substring)
+  - [split](#split)
+  - [toUpperCase](#touppercase)
+  - [toLowerCase](#tolowercase)
+- [Expressões regulares](#expressões-regulares)
   - [match](#match)
   - [search](#search)
-  - [replace com regex](#replace-regex)
+  - [Replace com regex](#replace-com-regex)
 - [Numbers](#numbers)
-  - [Numero para string](#numero-string)
+  - [Numero para string](#numero-para-string)
   - [Casas decimais](#casas-decimais)
-    - [tofixed - Escolher quantas casas decimais aparecer](#tofixed)   
-  - [Saber se o numéro é inteiro](#saber-numero-inteiro)
-  - [Saber ser é um NaN (Not a number)](#saber-nan)
-  - [Padrão de calculo - IEEE 754-2008](#padrao-calculo)
+    - [tofixed - Escolher quantas casas decimais aparecer](#tofixed---escolher-quantas-casas-decimais-aparecer)
+  - [Saber se o numéro é inteiro](#saber-se-o-numéro-é-inteiro)
+  - [Saber ser é um NaN (Not a number)](#saber-ser-é-um-nan-not-a-number)
+  - [Padrão de calculo - IEEE 754-2008](#padrão-de-calculo---ieee-754-2008)
 - [Math](#math)
-  - [Arrendondar numeros](#arredondar-numeros)
-    - [Para baixo - Math.floor](#para-baixo)
-    - [Para cima - Math.ceil](#para-cima)
-    - [Para o mais próximo - Math.round](#para-mais-proximo)
-  - [Achar maior e menor numero](#achar-maior-menor-numero)
-  - [Gerar numeros aleatórios](#gerar-aleatorio)
-  - [Potenciação](#potenciacao)
-  - [Divisão por zero](#divisao-zero)
-    - [Tratando divisão por zero](#tratamento-divisao-zero)
+  - [Arrendondar numeros](#arrendondar-numeros)
+    - [Para baixo - Math.floor](#para-baixo---mathfloor)
+    - [Para cima - Math.ceil](#para-cima---mathceil)
+    - [Para o mais próximo - Math.round](#para-o-mais-próximo---mathround)
+  - [Achar maior e menor numero](#achar-maior-e-menor-numero)
+  - [Gerar numeros aleatórios](#gerar-numeros-aleatórios)
+  - [Potenciação](#potenciação-1)
+  - [Divisão por zero](#divisão-por-zero)
+    - [Tratando divisão por zero](#tratando-divisão-por-zero)
 - [Arrays](#arrays)
-  - [Obter valores do array](#obter-valores-array)
-  - [Mudando os valores do array](#mudando-valores-array)
-  - [Passando valores entre arrays](#passando-valores-arrays)
-  - [Comprimento do array - length](#comprimento-array)
-  - [Inserir valores no array - push/unshift](#inserir-valores-array)
-  - [Romover valores do array - pop/shift/delete](#remover-valores-array)
-  - [Fatiar um array - slice](#fatiar-array)
-  - [Checkar instancia de array](#checar-instancia-array)
-  - [Remover e inserir valores - Splice](#remover-inserir-valores-splice)
+  - [Obter valores do array](#obter-valores-do-array)
+  - [Mudando os valores do array](#mudando-os-valores-do-array)
+  - [Passando valores entre arrays](#passando-valores-entre-arrays)
+  - [Comprimento do array - length](#comprimento-do-array---length)
+  - [Inserir valores no array - push/unshift](#inserir-valores-no-array---pushunshift)
+  - [Romover valores do array - pop/shift/delete](#romover-valores-do-array---popshiftdelete)
+  - [Fatiar um array - slice](#fatiar-um-array---slice)
+  - [Checkar instancia de array](#checkar-instancia-de-array)
+  - [Remover e inserir valores - Splice](#remover-e-inserir-valores---splice)
   - [Concatenar array](#concatenar-array)
-  - [Filtrar o array](#filtrar-array)
-  - [Mapear o array](#mapear-array)
+  - [Filtrar o array](#filtrar-o-array)
+  - [Mapear o array](#mapear-o-array)
   - [Reduce](#reduce)
   - [Foreach](#foreach)
+- [Funções](#funções)
+  - [Criar função - function](#criar-função---function)
+  - [Arrow function](#arrow-function)
+  - [Parametros de função](#parametros-de-função)
+    - [Parametros de resto - Rest operator](#parametros-de-resto---rest-operator)
+  - [Funções dentro de uma variavel - Function expression](#funções-dentro-de-uma-variavel---function-expression)
+  - [Passando função como parametro](#passando-função-como-parametro)
+  - [Arguments](#arguments)
+    - [Arguments em functions](#arguments-em-functions)
+  - [Closures - Function dentro de function](#closures---function-dentro-de-function)
+  - [Função de callback](#função-de-callback)
+  - [IIFE - Immediately invoked function expression](#iife---immediately-invoked-function-expression)
+  - [Funções geradoras](#funções-geradoras)
+  - [Funções recursivas](#funções-recursivas)
+- [Objetos](#objetos)
+  - [Criar objeto](#criar-objeto)
+  - [Acessar valores do objeto](#acessar-valores-do-objeto)
+  - [Fabrica de objetos](#fabrica-de-objetos)
+  - [Factory Functions](#factory-functions)
+    - [Utilizando Getter](#utilizando-getter)
+    - [Utilizando Setter](#utilizando-setter)
+  - [Contructor functions](#contructor-functions)
+  - [Congelar objeto - freeze](#congelar-objeto---freeze)
+  - [Métodos do objeto](#métodos-do-objeto)
+  - [Propriedades do objeto](#propriedades-do-objeto)
+    - [Apenas um atributo](#apenas-um-atributo)
+    - [Todos os atributos](#todos-os-atributos)
+  - [Propiedades do objeto com getters e setters](#propiedades-do-objeto-com-getters-e-setters)
+  - [Metodos uteis para objetos](#metodos-uteis-para-objetos)
+    - [Copiar objeto](#copiar-objeto)
+    - [Checar como estão as propiedades do objeto](#checar-como-estão-as-propiedades-do-objeto)
+    - [Pegar o valor do objeto](#pegar-o-valor-do-objeto)
+    - [Pegar valor do objeto com entries](#pegar-valor-do-objeto-com-entries)
+  - [Prototypes](#prototypes)
+    - [Manipulação de prototype](#manipulação-de-prototype)
+    - [Criando objeto pelo prototype](#criando-objeto-pelo-prototype)
+  - [Herança](#herança)
+  - [Polimorfismo](#polimorfismo)
+  - [Factory Functions + Prototype](#factory-functions--prototype)
+  - [Composing / Mixing](#composing--mixing)
+  - [Object map](#object-map)
+- [Class](#class)
+  - [Getter & Setter](#getter--setter)
+  - [Herança com classes](#herança-com-classes)
+  - [Metodos estaticos](#metodos-estaticos)
+    - [Valores primitivos e por referencia](#valores-primitivos-e-por-referencia)
+      - [Valores primitivos (imutaveis)](#valores-primitivos-imutaveis)
+      - [Valores do referencia (mutavel)](#valores-do-referencia-mutavel)
+  - [window.document](#windowdocument)
+  - [Seção 3 - JavaScript Lógica de programação](#seção-3---javascript-lógica-de-programação)
+    - [Operações de comparação](#operações-de-comparação)
+    - [Operadores lógicos](#operadores-lógicos)
+    - [Avaliação de curto circuito (Short-circuit)](#avaliação-de-curto-circuito-short-circuit)
+      - [Valores que avalião em false](#valores-que-avalião-em-false)
+      - [Operador && and](#operador--and)
+      - [Operador || or](#operador--or)
+    - [Estruturas condicionais](#estruturas-condicionais)
+      - [if else if e else](#if-else-if-e-else)
+      - [Avaliação por curto-circuito](#avaliação-por-curto-circuito)
+      - [Operação ternario](#operação-ternario)
+    - [Objeto date](#objeto-date)
+      - [Obter ano, mes, dia, horas, minutos, segundos, milesimos](#obter-ano-mes-dia-horas-minutos-segundos-milesimos)
+      - [Formatar data](#formatar-data)
+    - [Switchs](#switchs)
+    - [Atribuição via desestruturação (Arrays)](#atribuição-via-desestruturação-arrays)
+    - [Atribuição via desestruturação (Objetos)](#atribuição-via-desestruturação-objetos)
+    - [Estrutura de repetição](#estrutura-de-repetição)
+      - [For](#for)
+      - [For in](#for-in)
+      - [For of](#for-of)
+    - [DOM - Document object model](#dom---document-object-model)
+      - [Seletores](#seletores)
+        - [Selecionar elemento](#selecionar-elemento)
+        - [Selecionar mais de um elemento](#selecionar-mais-de-um-elemento)
+        - [Buscar pai de um elemento](#buscar-pai-de-um-elemento)
+      - [Remover elmento](#remover-elmento)
+        - [remover pai do elemento](#remover-pai-do-elemento)
+      - [Pegar o texto de um elemento](#pegar-o-texto-de-um-elemento)
+      - [Eventos e listeners](#eventos-e-listeners)
+        - [Adicionar listener a um elemento](#adicionar-listener-a-um-elemento)
+        - [Selecionar element via evento](#selecionar-element-via-evento)
+      - [Criar elemento](#criar-elemento)
+      - [Inserir dados a elemento](#inserir-dados-a-elemento)
+        - [Inserir filhos em um elemento](#inserir-filhos-em-um-elemento)
+        - [Pegar estilos de elementos](#pegar-estilos-de-elementos)
+        - [Mudar estilos de um elemento](#mudar-estilos-de-um-elemento)
+    - [While do while](#while-do-while)
+      - [While](#while)
+      - [Do while](#do-while)
+    - [Break e continue](#break-e-continue)
+      - [Continue](#continue)
+      - [Break](#break)
+    - [Try Catch finally](#try-catch-finally)
+      - [Errors](#errors)
+    - [Interval e Time outs](#interval-e-time-outs)
+      - [setInterval](#setinterval)
+      - [setTimeout](#settimeout)
+    - [JSON](#json)
+      - [Passar para json](#passar-para-json)
+      - [Passar Json para um objeto JavaScript](#passar-json-para-um-objeto-javascript)
+    - [LocalStorage](#localstorage)
+      - [Salvar no localStorage](#salvar-no-localstorage)
+      - [Buscar dados](#buscar-dados)
+      - [Deletar do localStorage](#deletar-do-localstorage)
+    - [Promise](#promise)
+      - [Métodos uteis para promisses](#métodos-uteis-para-promisses)
+        - [Promise.all](#promiseall)
+        - [Promise race](#promise-race)
+        - [Promise resolve e reject](#promise-resolve-e-reject)
+        - [Async await](#async-await)
+    - [Requisições](#requisições)
+      - [XMLHttpRequest](#xmlhttprequest)
+      - [Fetch API](#fetch-api)
+      - [Axios](#axios)
+    - [Compiladores e transpiladores (Acho que é assim)](#compiladores-e-transpiladores-acho-que-é-assim)
+      - [Babel](#babel)
+        - [Instalação](#instalação)
+        - [Conversão de código](#conversão-de-código)
+        - [Automazar a conversão de código](#automazar-a-conversão-de-código)
+    - [WebPack](#webpack)
+      - [Instalação](#instalação-1)
+        - [configuração](#configuração)
+    - [Import & Export](#import--export)
+      - [Export](#export)
+      - [import](#import)
+  
+
+
 
 <a id='console.log'></a>
 
@@ -992,14 +1121,18 @@ array.forEach((value, index, array) => {
 })
 ```
 
-### Funções
+<a id='funcoes'></a>
 
-#### Criar function
+# Funções
 
-> Funções podem ter retornos ou não
+<a id='cria-funcao'></a>
+
+## Criar função - function
+
+> Funções podem ter retornos ou não, assim como parametros
 
 ```js
-//Quando se declar uma função da maneira abaix, a função poderá ser chamada em qualquer lugar do código - Efeito Hosting
+//Quando se declar uma função da maneira abaixo, a função poderá ser chamada em qualquer lugar do código - Efeito Hosting
 //Escopo básico de função
 function name (parameters) {
     //logic
@@ -1011,16 +1144,18 @@ function teste(){
 }
 ```
 
-#### Arrow function
+<a id='arrow-function'></a>
 
-> Simplifica o código
+## Arrow function
+
+É a mesma coisa que a função normal, porém ela veio para deixar o código mais elegante
 
 ```javascript
 //Escopo básico
 (parameters) => {logic}
 
 //example
-//Aqui como é uma linha não precisa de return
+//Aqui como é uma linha não precisa de return, o return é automatico
 (num) => num ** 0.5
 //or
 num => num ** 0.5
@@ -1028,16 +1163,19 @@ num => num ** 0.5
 const raiz = num => num ** 0.5
 ```
 
-#### Parametros
+<a id='parametro-funcao'></a>
+
+## Parametros de função
 
 ```javascript
 //Pegar parametro via desestruturação de objeto
 const obj = { name: 'Albert', surname: 'Einstein'}
 
+//Pegando somente o nome
 function getName({name}) {
     console.log(name)
 }
-getName(obj)
+getName(obj) // Albert
 
 //Pegar valores via desestruturação de um array
 const array = [1,2,3,4]
@@ -1045,13 +1183,21 @@ const array = [1,2,3,4]
 const getThreeFirstNumbers = ([num1,num2,num3]) => {
     console.log(num1,num2,num3)
 }
-getThreeFirstNumbers(array)
+getThreeFirstNumbers(array) // [1,2,3]
 
 // Função com valores padrões. Funciona também para desestruturação
 function soma(x=10, y=20){
     return x + y
 }
+```
 
+<a id='parametro-resto'></a>
+
+### Parametros de resto - Rest operator
+
+O parametro de resto deve ser o ultimo parametro da funcão
+
+```js
 //Rest operator
 const a = 1
 const b = 2
@@ -1059,7 +1205,6 @@ const c = 3
 const d = 4
 const e = 5
 
-// O parametro de resto deve ser o ultimo parametro da funcão
 function example(a,b,...rest){
     console.log(a,b,rest)// 1 2 [3,4,5]
 }
@@ -1067,7 +1212,9 @@ function example(a,b,...rest){
 example(a,b,c,d,e)
 ```
 
-#### Funções podem ser guardadas dentro de uma variavel - Function expression
+<a id='funcao-dentro-variavel'></a>
+
+## Funções dentro de uma variavel - Function expression
 
 ```javascript
 const sayHello = function () {
@@ -1077,38 +1224,47 @@ const sayHello = function () {
 const sayHello = () => console.log('Hello')
 ```
 
-#### Passando função como parametro
+<a id='funcao-como-parametro'></a>
+
+## Passando função como parametro
 
 ```javascript
 const sayHello = () console.log('Hello')
 const talking = (sayHello) => sayHello()
 ```
 
-### Arguments
+<a id='arguments'></a>
 
-#### Arguments em functions 
+## Arguments
+
+<a id='arguments-functions'></a>
+
+### Arguments em functions 
+
+Funciona apenas em function e não em arrow function. Para fazer funcionar de forma semelhante em  arrow function, utilize o rest operator
 
 ```javascript
-//Funciona apenas em function e não em arrow function. Para fazer funcionar de forma semelhante em  arrow function, utilize o rest operator
 function soma (){
-    let total
+    let total = 0
     //dentro de arguments, se encontra todos os valores
-    for (argument of arguments){
-        total += argument
+    for (let argument of arguments){
+        total += Number(argument)
     }
     return total
 }
 //Vai somar todos esses valores 
-soma(1,2,3,4,5,123,123,4,56,7,23,8,)
+soma(1,2,3,4,5,123,123,4,56,7,23,8)
 
 ```
 
-### Closures - Function dentro de function
+<a id='closures'></a>
 
-> Habilidade da função acessar seu escopo léxico (Onde foi definida)
+## Closures - Function dentro de function
+
+Habilidade da função acessar seu escopo léxico (Onde foi definida)
 
 ```javascript
-function mutiplica(multiplicador){
+function multiplica(multiplicador){
     return function(n){
         return n * multiplicador
     }
@@ -1118,9 +1274,11 @@ const duplica = multiplica(2) // Recebe a função dentro da função, por conta
 duplica(4) // 8
 ```
 
-### Função de callback
+<a id='funcao-callback'></a>
 
-> Passar funções para ser executadas após outras funções. É bem semelhante ao exemplo mais acima
+## Função de callback
+
+Passar funções para ser executadas após outras funções. É bem semelhante ao exemplo mais acima
 
 ```javascript
 const first = (callback) => {
@@ -1139,24 +1297,35 @@ const third = (callback) => {
         callback()
 }
 
-first(() => second(() => third()))
-// first second third
+first(() => second(() => third())) // first second third
 ```
 
-### IIFE - Immediately invoked function expression
+<a id='IIFE'></a>
+
+## IIFE - Immediately invoked function expression
 
 > A função é executada assim que é invocada
 
 ```javascript
+// Escopo classico
 (function (parameters){
-    console.log('teste')
+    // logic
 })(parameters);
-//teste
+// Escopo com arrow function
+(() => {
+    //logic
+})()
+//exemplo
+(() => console.log('teste'))()
 ```
 
-### Funções geradoras
+<a id='funcao-geradora'></a>
 
-> Entrega um valor por chamada. Quando se utilizar [return] a função geradora será parada
+## Funções geradoras
+
+Entrega um valor por chamada. Quando se utilizar [return] a função geradora será parada
+
+> A funcão geradora podem usar * 
 
 ```javascript
 function* geradora1() {
@@ -1202,9 +1371,11 @@ callInSequence.next() //function_1
 callInSequence.next() //function_2
 ```
 
-### Funções recursivas
+<a id='funcao-recursiva'></a>
 
-> Função que chama ela mesma
+## Funções recursivas
+
+Função que chama ela mesma
 
 ```javascript
 //Fará o laço de repetição 5 vezes
@@ -1217,11 +1388,15 @@ const recursive = (max) => {
 recursive(0)
 ```
 
-### Objetos
+<a id='objetos'></a>
 
-> Lembrete - Quando for criar um metodo que se repete em cada objeto, é bem mais performatico utilizar o prototipe
+# Objetos
 
-#### Criar objeto
+> Lembrete - Quando for criar um metodo que se repete em cada objeto, é bem mais performatico utilizar o prototype. Para que o metodo seja criado em apenas um lugar ;)
+
+<a id='cria-objeto'></a>
+
+## Criar objeto
 
 ```js
 // Criação literal - Dicionario
@@ -1229,15 +1404,15 @@ const pessoa = {
     nome: 'Albert',
     sobrenome: 'Einstein'
 }
-
 // or
-
 const pessoa = new Object()
 pessoa.nome = "Albert"
 pessoa.sobrenome = "Einstein"
 ```
 
-#### Acessar valores do objeto
+<a id='valores-objeto'></a>
+
+## Acessar valores do objeto
 
 ```javascript
 const people = {
@@ -1249,7 +1424,9 @@ people.name // Albert
 people['name'] // Albert
 ```
 
-#### Fabrica objeto
+<a id='fabrica-objeto'></a>
+
+## Fabrica de objetos
 
 ```js
 // forma padrão
@@ -1263,7 +1440,7 @@ function criaPessoa (name, surname){
 
 //Se os parametros tiverem os mesmos nomes dos atributos, ficara dessa forma.
 
-//Equivalente a função de cima
+//Equivalente a forma de cima
 function criaPessoa (nome, sobrenome){
     return {
         nome,
@@ -1272,7 +1449,9 @@ function criaPessoa (nome, sobrenome){
 }
 ```
 
-##### Factory Functions
+<a id='factory-functions'></a>
+
+## Factory Functions
 
 > Funções fabricas
 
@@ -1282,7 +1461,7 @@ const createPeople = (name, surname) => {
         name,
         surname,
         sayHello: () => {
-            //This sempre se refere ao objeto chamadodd
+            //This sempre se refere ao objeto chamado
             return `Hello! I'm ${this.name}.`
         }
     }
@@ -1290,8 +1469,13 @@ const createPeople = (name, surname) => {
 
 const people = createPeople()
 people.sayHello()
+```
 
-//Utilizadno getter
+<a id='getter'></a>
+
+### Utilizando Getter 
+
+```js
 createPeople = (name, surname, age) => {
     name,
     surname,
@@ -1303,8 +1487,12 @@ createPeople = (name, surname, age) => {
 
 const people = createPeople('Albert', 'Einstein', 76 )
 people.compleName // Albert Einstein
+```
+<a id='setter'></a>
 
-//Utilizando setter
+### Utilizando Setter
+
+```js
 createPeople = (name) => {
     return {
         name,
@@ -1318,10 +1506,11 @@ createPeople = (name) => {
 const people = createPeople('Albert')
 people.setSurname = 'Einstein'
 people.surname // Einstein
-
 ```
 
-##### Contructor functions
+<a id='constructor-functions'></a>
+
+## Contructor functions
 
 > É interessante iniciar com letra maiuscula por convenção.
 
@@ -1344,12 +1533,14 @@ const pessoa1 = new Pessoa('Albert', 'Einstein')
 const pessoa2 = new Pessoa('Nikola', 'Tesla')
 ```
 
-#### Congelar objeto
+<a id='congelar-objeto'></a>
 
-> Não permitir alteração no objeto
+## Congelar objeto - freeze
+
+Não permitir alteração no objeto.
 
 ```javascript
-//Freeze in creation
+//Congelar na criação
 function People(name, surname) {
     this.name = name
     this.surname = surname
@@ -1357,7 +1548,7 @@ function People(name, surname) {
     Object.freeze(this)
 }
 
-//Freeze after creation
+//Congelar depois da criação
 function People(name, surname) {
     this.name = name
     this.surname = surname
@@ -1367,7 +1558,9 @@ const people = new People('Albert', 'Einstein')
 Object.freeze(people)
 ```
 
-#### Funções no objeto
+<a id='metodo-objeto'></a>
+
+## Métodos do objeto
 
 ```javascript
 const pessoa = {
@@ -1385,28 +1578,45 @@ const pessoa = {
 }
 ```
 
-#### Propriedades do objeto 
+<a id='propriedade-objeto'></a>
+
+## Propriedades do objeto 
+
+<a id='apenas-um-atributo'></a>
+
+### Apenas um atributo
 
 ```js
 function People (name, surname){
     this.name = name
     this.surname = surname
 
-    //example 1 - just one atribute
     Object.defineProperty(this, 'surname', {
         enumerable: true, // show key
         value: surname, // show value
         writable: false, // update
         configurable: true, // reset configurations
     })
-    //example 2 - all altributes
+}
+const people = new People('Albert', 'Einstein')
+```
+
+<a id='todos-atributos'></a>
+
+### Todos os atributos
+
+```js
+function People (name, surname){
+    this.name = name
+    this.surname = surname
+
     Object.defineProperties(this, {
         name : {
             enumerable: true, // show key
-            value: surname, // show value
+            value: name, // show value
             writable: false, // update
             configurable: true, // reset configurations
-        }
+        },
         surname: {
             enumerable: true, // show key
             value: surname, // show value
@@ -1420,7 +1630,9 @@ const people = new People('Albert', 'Einstein')
 Object.keys(people) // name, surname
 ```
 
-#### Propiedades do objeto com getters e setters
+<a id='prorpiedades-objeto-geter-setter'></a>
+
+## Propiedades do objeto com getters e setters
 
 ```javascript
 function People (name, surname){
@@ -1435,7 +1647,6 @@ function People (name, surname){
         set: function(value) {
             if(typeof value !== 'string')
                 throw new TypeError('message')
-
             surname = value
         }
     })
@@ -1446,9 +1657,13 @@ people.surname // 'Einstein'
 people.surname = 1 // Error :)
 ```
 
-#### Metodos uteis para objetos
+<a id='metodos-uteis-objetos'></a>
 
-##### Copiar objeto
+## Metodos uteis para objetos
+
+<a id='copiar-objeto'></a>
+
+### Copiar objeto
 
 ```javascript
 const people = {name: 'Albert', surname: 'Einstein'}
@@ -1461,7 +1676,9 @@ people // {name: 'Albert', surname: 'Einstein'}
 copyPeople // {name: 'Albert', surname: 'Einstein', age: 76}
 ```
 
-##### Checar como estão as propiedades do objeto
+<a id='checar-propiedade-objeto'></a>
+
+### Checar como estão as propiedades do objeto
 
 ```javascript
 const people = {name: 'Albert', surname: 'Einstein'}
@@ -1473,7 +1690,9 @@ Object.getOwnPropertyDescriptor(people, 'name') /*
 */
 ```
 
-#### Pegar o valor do objeto
+<a id='pegar-valor-objeto'></a>
+
+### Pegar o valor do objeto
 
 ```javascript
 const people = {name: 'Albert', surname: 'Einstein'}
@@ -1481,7 +1700,9 @@ const people = {name: 'Albert', surname: 'Einstein'}
 Object.values(people) // ['Albert', 'Einstein']
 ```
 
-##### Pegar valor do objeto com entries
+<a id='pegar valor-objeto-entries'></a>
+
+### Pegar valor do objeto com entries
 
 > Retorna um array com os valores do objeto
 
@@ -1490,7 +1711,9 @@ const people = {name: 'Albert', surname: 'Einstein'}
 console.log(Object.entries(people)) // ['name', 'Albert'], ['surname', 'Einstein']
 ```
 
-### Prototypes 
+<a id='prototypes'></a>
+
+## Prototypes 
 
 > Cara é muito bom! Cria uma função apenas para todos os objetos. Mantendo assim uma melhor performance.
 
@@ -1505,18 +1728,22 @@ People.prototype.completeName = function(){
 }
 ```
 
-#### Manipulação de prototype
+<a id='manipulacao-prototype'></a>
+
+### Manipulação de prototype
 
 ```js
 const object_A = { keyExample_A: 'ExampleA'}
 const object_B = { keyExample_B: 'ExampleB'}
 
-// Object_A will be prototype of object_B
+// O object_A vai ser o protótipo do object_B
 Object.setPrototypeOf(object_B, object_A)
 object_B.keyExample_A // 'ExampleA'
 ```
 
-#### Criando objeto pelo prototype
+<a id='copiar-objeto-prototype'></a>
+
+### Criando objeto pelo prototype
 
 ```javascript
 function People(name) {
@@ -1539,10 +1766,11 @@ example // People {newKey: 'Example'}
 example.getName() // Here return name
 ```
 
-#### Herança
+<a id='herança'></a>
+
+## Herança
 
 ```javascript
-//example
 function Produto(nome, preco){
     this.nome = nome
     this.preco = preco
@@ -1556,6 +1784,7 @@ function Camiseta(nome, preco, cor){
     Produto.call(this, nome, preco)
     this.cor = cor
 }
+
 //Setar o mesmo prototype do produto
 Camiseta.prototype = Object.create(Produto.prototype)
 // Para setar o objeto como uma Camiseta, senão vai ficar como produto
@@ -1572,11 +1801,15 @@ Camiseta.prototype.aumento = function(parameters){
 }
 ```
 
-#### Polimorfismo
+<a id='polimorfismo'></a>
+
+## Polimorfismo
 
 > Fazer uma classe filha se comportar de forma diferente do pai (Sobreescrita de métodos)
 
-#### Factory Functions + Prototype
+<a id='factory-functions-prototype'></a>
+
+## Factory Functions + Prototype
 
 ```javascript
 function createGenius(name, surname) {
@@ -1590,11 +1823,13 @@ function createGenius(name, surname) {
         name: {value: name},
         surname: {value :surname}
     })
-    const people = createGenius('Albert', 'Einstein')
 }
+const people = createGenius('Albert', 'Einstein')
 ```
 
-##### Composing / Mixing 
+<a id='composing-mixing'></a>
+
+## Composing / Mixing 
 
 ```javascript
 const sayHello = {
@@ -1603,7 +1838,7 @@ const sayHello = {
     }
 }
 
-const peoplePrototype = {... sayHello}
+const peoplePrototype = {...sayHello}
 // const peoplePrototype =  Object.assign({}, sayHello)
 
 function createGenius(name, surname) {
@@ -1616,7 +1851,9 @@ function createGenius(name, surname) {
 const people = createGenius('Albert', 'Einstein')
 ```
 
-#### Object map
+<a id='objet-map'></a>
+
+## Object map
 
 ```javascript
 const genius = [
@@ -1634,7 +1871,9 @@ console.log(newGenius)
 console.log(newGenius.get('Albert'))
 ```
 
-### Class
+<a id='class'></a>
+
+# Class
 
 > Cara que maravilha linkar os prototypes aqui
 
@@ -1652,7 +1891,9 @@ class People {
 const people = new People()
 ```
 
-#### Getter & Setter
+<a id='getter-setter-class'></a>
+
+## Getter & Setter
 
 ```javascript
 const _velocity = Symbol('Velocity')
@@ -1679,7 +1920,9 @@ car.velocity = 50
 car.velocity // 50 
 ```
 
-#### Herança com classes
+<a id='herança-class'></a>
+
+## Herança com classes
 
 ```javascript
 class Genius{
@@ -1705,7 +1948,9 @@ class People extends Genius{
 }
 ```
 
-#### Metodos estaticos
+<a id='metodos-estaticos'></a>
+
+## Metodos estaticos
 
 > Acessa a classe sem instanciar a classe
 
@@ -1727,7 +1972,6 @@ class Genius{
 
 Genius.sayHelloToEverybody() // Hello world
 ```
-
 
 ### Valores primitivos e por referencia
 
