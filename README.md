@@ -204,8 +204,6 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
 
 
 
-<a id='console.log'></a>
-
 # Console log
 
 ```js
@@ -217,8 +215,6 @@ console.log(` 'tudo isso' "é um print" ${123}`);
 console.log(` 'tudo isso' "é um print" ${variable}`);
 ```
 
-<a id='comentarios'></a>
-
 # Comentários
 
 ```js
@@ -228,13 +224,10 @@ console.log(` 'tudo isso' "é um print" ${variable}`);
     Longo
 */
 ```
-<a id='variaveis'></a>
 
 # Variáveis
 
 > Em váriaveis geralmente se utiliza camelCase, por exemplo: **nomeVariavel**
-
-<a id='let'></a>
 
 ## **LET**
 
@@ -248,8 +241,6 @@ nome = 'Albert';
 let sobreNome = 'Einstein';
 ```
 
-<a id='const'></a>
-
 ## **CONST**
 
 - Não pode ser inicializada vazia
@@ -261,8 +252,6 @@ const nome = 'Einstein';
 const dez =  10;
 ```
 
-<a id='var'></a>
-
 ## **VAR**
 
 - Não utilize var
@@ -272,7 +261,6 @@ const dez =  10;
 ```js
 var teste = 'teste'
 ```
-<a id='tipos-primitivos'></a>
 
 # Tipos de dados primitivos
 
@@ -286,8 +274,6 @@ const aprovado = true // boolean
 //symbol
 ```
 
-<a id='typeof'></a>
-
 ## **TYPEOF** - Ver o tipo da variavél
 
 ```js
@@ -297,7 +283,6 @@ const numero = 10
 typeof numero // number
 typeof nome, numer // string number
 ```
-<a id='valores-referencia'></a>
 
 ## Valores por referencia
 
@@ -314,8 +299,6 @@ console.log(a,b) // [1,2,3,4] [1,2,3,4]
 // tando 'a' como 'b' apontam para os mesmos valores
 ```
 
-<a id='operadores-aritimeticos'></a>
-
 # Operadores aritimeticos
 
 [**Precedencia** documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
@@ -325,16 +308,12 @@ console.log(a,b) // [1,2,3,4] [1,2,3,4]
 - **-**  Terceiro
 - **+**  Quarto
 
-<a id='concatenacao'></a>
-
 ## Contatenação utilizando strings
 
 ```js
 console.log('Albert' +  ' ' + 'Einstein') // 'Albert Einstein'
 console.log('Albert ' + 1) // 'Albert 1'
 ```
-
-<a id='adicao-subtracao'></a>
 
 ## Adição e subtração
 
@@ -345,23 +324,17 @@ console.log(20 - 10) // 10
 console.log('10' - 10) // 0 Conversão novamente
 ```
 
-<a id='potenciacao'></a>
-
 ## Potenciação
 
 ```js
 console.log(2**2) // 4
 ```
 
-<a id='resto-divisao'></a>
-
 ## Resto da divisão
 
 ```js
 console.log(10 % 3) // 1
 ```
-
-<a id='incremento-decremento'></a>
 
 ## Incremento decremento
 
@@ -381,8 +354,6 @@ num **= 2 // 10000
 
 > **NaN = not a number**
 
-<a id='conversao-tipo-dados'></a>
-
 # Conversão de tipo de dados
 
 ```js
@@ -395,10 +366,6 @@ Number('5') //number - 5
 Number('5.2') //number - 5.2
 String(50) //string - '50'
 ```
-
-<a id='alerts'></a>
-
-<a id='alert'></a>
 
 # Alert
 
@@ -414,8 +381,6 @@ alert('alerta')
 alert(123)
 ```
 
-<a id='confirm'></a>
-
 ## Confirm
 
 É bem parecido com o Alert, porém neste existe botões para aceitar, então você pode aceitar ou não oque a caixa flutuante de texto diz.
@@ -426,8 +391,6 @@ alert(123)
 window.confirm('mensagem')
 confirm('mensagem')
 ```
-
-<a id='prompt'></a>
 
 ## prompt
 
@@ -440,8 +403,6 @@ window.prompt('mensagem')
 confirm('mensagem')
 ```
 
-<a id='string'></a>
-
 # String
 
 É um tipo de dado que representa um texto.
@@ -453,8 +414,6 @@ typeof `Isso é um texto com números ${123}` // string
 typeof 'Isso também é um texto com números ' + {123} // string
 ```
 
-<a id='escapar-caracter'></a>
-
 ## Escapar um caracter
 
 Beleza, as vezes queremos printar esse caracter '\', e se você fizer isso dará problema, pois esse caracter representa outra coisa dentro de uma string, então para isso você utiliza ele da forma abaixo:
@@ -463,8 +422,6 @@ Beleza, as vezes queremos printar esse caracter '\', e se você fizer isso dará
 'Barra invertida \\' // Barra invertida \
 'Posso pegar a aspa \' assim' // Posso pegar a aspa ' assim
 ```
-
-<a id='posicao-index'></a>
 
 ## Posições / Index
 
@@ -492,8 +449,6 @@ meuTexto[7] // t
 meuTexto[8] // o
 ```
 
-<a id='indexof'></a>
-
 ### indexOf
 
 Usado para buscar a posição de um valor informado na String
@@ -506,8 +461,6 @@ texto.indexOf('e') //1
 texto.indexOf('w') //-1 - Retorna -1 quando valor não é encontrado
 ```
 
-<a id='lastindexof'></a>
-
 ### lastIndexOf
 
 Faz a mesma coisa que o indexOf, porém ele começa a percorrer as posições de trás para frente
@@ -517,8 +470,6 @@ const valor = 'teste'
 valor.lastIndexOf('e') // 1  
 valor.lastIndexOf('s') // 2
 ```
-
-<a id='concat'></a>
 
 ## concat
 
@@ -530,8 +481,6 @@ Usado para juntar textos
 umaString.concat('outraString') // Terceira forma
 ```
 
-<a id='endwith'></a>
-
 ## Endwith
 
 Para checar se a string acaba com o valor que você informar
@@ -542,8 +491,6 @@ Para checar se a string acaba com o valor que você informar
 'string'.endsWith('a') // false
 ```
 
-<a id='replace'></a>
-
 ## replace
 
 Usado para trocar valores
@@ -552,8 +499,6 @@ Usado para trocar valores
 'teste'.replace('s', 'x') // texte
 ```
 
-<a id='length'></a>
-
 ## length
 
 Pegar o comprimento da string (Conta a quantidade de caracteres)
@@ -561,8 +506,6 @@ Pegar o comprimento da string (Conta a quantidade de caracteres)
 ```javascript
 'teste'.length //5
 ```
-
-<a id='slice'></a>
 
 ## slice
 
@@ -573,8 +516,6 @@ Usado para buscar um range de caracteres
 'teste'.slice(1,-1) // este
 ```
 
-<a id='subString'></a>
-
 ## subString
 
 Retorna os valores dentro de um range informado
@@ -582,8 +523,6 @@ Retorna os valores dentro de um range informado
 ```javascript
 'teste'.subString(0, 2) // te
 ```
-
-<a id='split'></a>
 
 ## split
 
@@ -595,8 +534,6 @@ Esse cara aqui consegue fatiar sua string, você informar em qual caracter ele v
 'isso vai cortar'.split(' ') // ['isso', 'vai', 'cortar']
 ```
 
-<a id='toUpperCase'></a>
-
 ## toUpperCase
 
 Função utilizada para deixar em maiusculo
@@ -604,8 +541,6 @@ Função utilizada para deixar em maiusculo
 ```js
 'teste'.toUpperCase() // 'TESTE'
 ```
-
-<a id='toLowerCase'></a>
 
 ## toLowerCase
 
@@ -615,11 +550,7 @@ função utilizada para deixar em minusculo
 'TESTE'.toLowerCase()
 ```
 
-<a id='expressoes-regulares'></a>
-
 # Expressões regulares
-
-<a id='match'></a>
 
 ## match
 
@@ -636,8 +567,6 @@ Usado para encontrar uma cadeia de caracteres (Regex) em uma string.
 'tenho 1 número'.match(/[0-9]/g) // [1]
 ```
 
-<a id='search'></a>
-
 ## search
 
 Usado para encontrar um valor, passando como parametro uma cadeia de caracteres (Regex)
@@ -647,8 +576,6 @@ Usado para encontrar um valor, passando como parametro uma cadeia de caracteres 
 ```js
 'Teste'.search(/s/) 2
 ```
-
-<a id='replace-regex'></a>
 
 ## Replace com regex
 
@@ -661,8 +588,6 @@ Da para utilizar as cadeias de carateres no replace também
 'tesssste'.replace(/s/g, 'x') // texxxxte
 ```
 
-<a id='numbers'></a>
-
 # Numbers
 
 > JavaScript faz as contas com base no padrão IEEE 754-2008. Existe sempre uma pequena imprecisão na hora de calcular numéros flutuantes abaixo de 1 (Com cadas decimais).
@@ -672,8 +597,6 @@ let num1 = 10 // number
 let num2 = 10.0123012 // number
 ```
 
-<a id='numero-string'></a>
-
 ## Numero para string
 
 ```javascript
@@ -681,11 +604,7 @@ let num = 10
 num.toString() // '10'
 ```
 
-<a id='casas-decimais'></a>
-
 ## Casas decimais
-
-<a id='tofixed'></a>
 
 ### tofixed - Escolher quantas casas decimais aparecer
 
@@ -694,8 +613,6 @@ let num = 10.123124324
 num.toFixed(2) // 10.12
 //number.toFixed(numero_casas_decimais)
 ```
-
-<a id='saber-numero-inteiro'></a>
 
 ## Saber se o numéro é inteiro
 
@@ -707,8 +624,6 @@ let num2 = 10.312
 Number.isInterger(num2) //false -  É um Number (Casas decimais)
 ```
 
-<a id='saber-nan'></a>
-
 ## Saber ser é um NaN (Not a number)
 
 ```javascript
@@ -718,8 +633,6 @@ Number.isNaN(ola) //true
 const num = 10
 Number.isNaN(num) //false
 ```
-
-<a id='padrao-calculo'></a>
 
 ## Padrão de calculo - IEEE 754-2008
 
@@ -734,15 +647,9 @@ console.log(Number((num1 + num2).toFixed(2)) //Pouco elegante mas funciona
 (num1 * 100) + (num2 * 100) / 100 // 0.4 - Muito pouco elegante, mas funciona
 ```
 
-<a id='math'></a>
-
 # Math
 
-<a id='arredondar-numeros'></a>
-
 ## Arrendondar numeros
-
-<a id='para-baixo'></a>
 
 ### Para baixo - Math.floor
 
@@ -750,15 +657,11 @@ console.log(Number((num1 + num2).toFixed(2)) //Pouco elegante mas funciona
 Math.floor(9.123) // 9
 ```
 
-<a id='para-cima'></a>
-
 ### Para cima - Math.ceil
 
 ```js
 Math.ceil(9.123) // 10
 ```
-
-<a id='para-mais-proximo'></a>
 
 ### Para o mais próximo - Math.round
 
@@ -770,8 +673,6 @@ Math.round(0.49) // 0
 Math.round(0.50) // 1
 ```
 
-<a id='achar-maior-menor-numero'></a>
-
 ## Achar maior e menor numero
 
 ```javascript
@@ -779,8 +680,6 @@ let numbers = [1,2,3,4,5,6]
 Math.min(numbers) //1
 Math.max(numbers) // 6
 ```
-
-<a id='gerar-aleatorio'></a>
 
 ## Gerar numeros aleatórios
 
@@ -792,8 +691,6 @@ Math.random() * (max - min) + min
 const number = Math.random()* (10 - 5) + 5 // numeros entre 5 e 10
 ```
 
-<a id='potenciacao'></a>
-
 ## Potenciação
 
 ```javascript
@@ -802,8 +699,6 @@ Math.pow(2,2) // 4
 2**2 // 4
 ```
 
-<a id='divisao-zero'></a>
-
 ## Divisão por zero
 
 > É necessário tomar cuidado, pois o JavaScript permite a divisão por zero classificando a variavel como infinity e true
@@ -811,8 +706,6 @@ Math.pow(2,2) // 4
 ```js
 10 / 0 // Infinity - true
 ```
-
-<a id='tratamento-divisao-zero'></a>
 
 ### Tratando divisão por zero
 
@@ -830,8 +723,6 @@ function notZero(n) {
 numerator / notZero(denominator)
 ```
 
-<a id='arrays'></a>
-
 # Arrays
 
 > Deve tomar cuidado com atribuições diretas, isso ocasiona em ponteiros. Então tudo oque você fizer em uma variavel ira refletir na outra. Para isso existem maneiras corretas descritas abaixo para fazer a atribuição de valores.
@@ -843,16 +734,12 @@ users[0] = 'Einstein'
 users[0] // Einstein
 ```
 
-<a id='obter-valores-array'></a>
-
 ## Obter valores do array
 
 ```javascript
 const users = ['Albert']
 users[0] // Albert
 ```
-
-<a id='mudando-valores-array'></a>
 
 ## Mudando os valores do array
 
@@ -861,8 +748,6 @@ const users  = ['Albert']
 users[0] = ['Nikola']
 users[0] // Nikola
 ```
-
-<a id='passando-valores-arrays'></a>
 
 ## Passando valores entre arrays
 
@@ -894,16 +779,12 @@ array_2 // [1,2,123123123]
 
 > Esses ... que está antes de array_1 [...array_1] significa que todo o valor de array_1 será espalhado, e como no caso a variável array_2 está recebendo [...array_1], significa que o valor de array_1 será espalhado dentro de array_2.
 
-<a id='comprimento-array'></a>
-
 ## Comprimento do array - length
 
 ```javascript
 const users = ['Albert', 'Nikola', 'Leonardo']
 users.length //3
 ```
-
-<a id='inserir-valores-array'></a>
 
 ## Inserir valores no array - push/unshift
 
@@ -918,8 +799,6 @@ users // ['Albert', 'Nikola', 'Leonardo']
 users.unshift('Thomas')
 users // ['Thomas', 'Albert', 'Nikola', 'Leonardo']
 ```
-
-<a id='remover-valores-array'></a>
 
 ## Romover valores do array - pop/shift/delete
 
@@ -941,8 +820,6 @@ delete users[0]
 users // [<emptyitem>]
 ```
 
-<a id='fatiar-array'></a>
-
 ## Fatiar um array - slice
 
 Quando o array é fatiado pelo metodo slice, ele não tem o seu valor realmente modificado,  slice apenas retorna os valores entre o intervalo que você informar.
@@ -955,16 +832,12 @@ users.slice(0,-1) // ['Albert', 'Nikola', 'Leonardo']
 
 > -1 Inidica a última posição do array
 
-<a id='checar-instancia-array'></a>
-
 ## Checkar instancia de array
 
 ```javascript
 const users = ['Albert', 'Nikola']
 users instanceof Array // true
 ```
-
-<a id='remover-inserir-valores-splice'></a>
 
 ## Remover e inserir valores - Splice
 
@@ -993,8 +866,6 @@ array.splice(3,2,'Albert', 'Nikola')
 array // [1,2,3,'Albert', 'Nikola']
 ```
 
-<a id='concatenar-array'></a>
-
 ## Concatenar array
 
 ```javascript
@@ -1003,8 +874,6 @@ const array2 = [5,6,7,8]
 
 array1.concat(array2) // [1,2,3,4,5,6,7,8 ]
 ```
-
-<a id='filtrar-array'></a>
 
 ## Filtrar o array
 
@@ -1036,8 +905,6 @@ const newArray = array.filter((value, index, array) => {
 })
 ```
 
-<a id='mapear-array'></a>
-
 ## Mapear o array
 
 Esse método permite passar por todas as posições do array. É bem parecido com um for, você também pode colocar sua lógica para ser executada em cada posição.
@@ -1065,8 +932,6 @@ const peoples = [
 const arrayWithNames = peoples.map(value => value.name)
 arrayWithNames // ['Albert', 'Nikola']
 ```
-
-<a id='reduce'></a>
 
 ## Reduce
 
@@ -1108,8 +973,6 @@ const pessoaMaisVelha = pessoas.reduce(function(acumulador, valor){
 pessoaMaisVelha // {name: Nikola, age: 86}
 ```
 
-<a id='foreach'></a>
-
 ## Foreach
 
 > Apenas passa sobre o array, assim como um for clássico
@@ -1121,11 +984,7 @@ array.forEach((value, index, array) => {
 })
 ```
 
-<a id='funcoes'></a>
-
 # Funções
-
-<a id='cria-funcao'></a>
 
 ## Criar função - function
 
@@ -1144,8 +1003,6 @@ function teste(){
 }
 ```
 
-<a id='arrow-function'></a>
-
 ## Arrow function
 
 É a mesma coisa que a função normal, porém ela veio para deixar o código mais elegante
@@ -1162,8 +1019,6 @@ num => num ** 0.5
 //or
 const raiz = num => num ** 0.5
 ```
-
-<a id='parametro-funcao'></a>
 
 ## Parametros de função
 
@@ -1191,8 +1046,6 @@ function soma(x=10, y=20){
 }
 ```
 
-<a id='parametro-resto'></a>
-
 ### Parametros de resto - Rest operator
 
 O parametro de resto deve ser o ultimo parametro da funcão
@@ -1212,8 +1065,6 @@ function example(a,b,...rest){
 example(a,b,c,d,e)
 ```
 
-<a id='funcao-dentro-variavel'></a>
-
 ## Funções dentro de uma variavel - Function expression
 
 ```javascript
@@ -1224,8 +1075,6 @@ const sayHello = function () {
 const sayHello = () => console.log('Hello')
 ```
 
-<a id='funcao-como-parametro'></a>
-
 ## Passando função como parametro
 
 ```javascript
@@ -1233,11 +1082,7 @@ const sayHello = () console.log('Hello')
 const talking = (sayHello) => sayHello()
 ```
 
-<a id='arguments'></a>
-
 ## Arguments
-
-<a id='arguments-functions'></a>
 
 ### Arguments em functions 
 
@@ -1257,8 +1102,6 @@ soma(1,2,3,4,5,123,123,4,56,7,23,8)
 
 ```
 
-<a id='closures'></a>
-
 ## Closures - Function dentro de function
 
 Habilidade da função acessar seu escopo léxico (Onde foi definida)
@@ -1273,8 +1116,6 @@ function multiplica(multiplicador){
 const duplica = multiplica(2) // Recebe a função dentro da função, por conta do return
 duplica(4) // 8
 ```
-
-<a id='funcao-callback'></a>
 
 ## Função de callback
 
@@ -1300,8 +1141,6 @@ const third = (callback) => {
 first(() => second(() => third())) // first second third
 ```
 
-<a id='IIFE'></a>
-
 ## IIFE - Immediately invoked function expression
 
 > A função é executada assim que é invocada
@@ -1318,8 +1157,6 @@ first(() => second(() => third())) // first second third
 //exemplo
 (() => console.log('teste'))()
 ```
-
-<a id='funcao-geradora'></a>
 
 ## Funções geradoras
 
@@ -1371,8 +1208,6 @@ callInSequence.next() //function_1
 callInSequence.next() //function_2
 ```
 
-<a id='funcao-recursiva'></a>
-
 ## Funções recursivas
 
 Função que chama ela mesma
@@ -1388,13 +1223,9 @@ const recursive = (max) => {
 recursive(0)
 ```
 
-<a id='objetos'></a>
-
 # Objetos
 
 > Lembrete - Quando for criar um metodo que se repete em cada objeto, é bem mais performatico utilizar o prototype. Para que o metodo seja criado em apenas um lugar ;)
-
-<a id='cria-objeto'></a>
 
 ## Criar objeto
 
@@ -1410,8 +1241,6 @@ pessoa.nome = "Albert"
 pessoa.sobrenome = "Einstein"
 ```
 
-<a id='valores-objeto'></a>
-
 ## Acessar valores do objeto
 
 ```javascript
@@ -1423,8 +1252,6 @@ const people = {
 people.name // Albert
 people['name'] // Albert
 ```
-
-<a id='fabrica-objeto'></a>
 
 ## Fabrica de objetos
 
@@ -1449,8 +1276,6 @@ function criaPessoa (nome, sobrenome){
 }
 ```
 
-<a id='factory-functions'></a>
-
 ## Factory Functions
 
 > Funções fabricas
@@ -1471,8 +1296,6 @@ const people = createPeople()
 people.sayHello()
 ```
 
-<a id='getter'></a>
-
 ### Utilizando Getter 
 
 ```js
@@ -1488,8 +1311,6 @@ createPeople = (name, surname, age) => {
 const people = createPeople('Albert', 'Einstein', 76 )
 people.compleName // Albert Einstein
 ```
-<a id='setter'></a>
-
 ### Utilizando Setter
 
 ```js
@@ -1507,8 +1328,6 @@ const people = createPeople('Albert')
 people.setSurname = 'Einstein'
 people.surname // Einstein
 ```
-
-<a id='constructor-functions'></a>
 
 ## Contructor functions
 
@@ -1533,8 +1352,6 @@ const pessoa1 = new Pessoa('Albert', 'Einstein')
 const pessoa2 = new Pessoa('Nikola', 'Tesla')
 ```
 
-<a id='congelar-objeto'></a>
-
 ## Congelar objeto - freeze
 
 Não permitir alteração no objeto.
@@ -1558,8 +1375,6 @@ const people = new People('Albert', 'Einstein')
 Object.freeze(people)
 ```
 
-<a id='metodo-objeto'></a>
-
 ## Métodos do objeto
 
 ```javascript
@@ -1578,11 +1393,7 @@ const pessoa = {
 }
 ```
 
-<a id='propriedade-objeto'></a>
-
 ## Propriedades do objeto 
-
-<a id='apenas-um-atributo'></a>
 
 ### Apenas um atributo
 
@@ -1600,8 +1411,6 @@ function People (name, surname){
 }
 const people = new People('Albert', 'Einstein')
 ```
-
-<a id='todos-atributos'></a>
 
 ### Todos os atributos
 
@@ -1630,8 +1439,6 @@ const people = new People('Albert', 'Einstein')
 Object.keys(people) // name, surname
 ```
 
-<a id='prorpiedades-objeto-geter-setter'></a>
-
 ## Propiedades do objeto com getters e setters
 
 ```javascript
@@ -1657,11 +1464,7 @@ people.surname // 'Einstein'
 people.surname = 1 // Error :)
 ```
 
-<a id='metodos-uteis-objetos'></a>
-
 ## Metodos uteis para objetos
-
-<a id='copiar-objeto'></a>
 
 ### Copiar objeto
 
@@ -1676,8 +1479,6 @@ people // {name: 'Albert', surname: 'Einstein'}
 copyPeople // {name: 'Albert', surname: 'Einstein', age: 76}
 ```
 
-<a id='checar-propiedade-objeto'></a>
-
 ### Checar como estão as propiedades do objeto
 
 ```javascript
@@ -1690,8 +1491,6 @@ Object.getOwnPropertyDescriptor(people, 'name') /*
 */
 ```
 
-<a id='pegar-valor-objeto'></a>
-
 ### Pegar o valor do objeto
 
 ```javascript
@@ -1699,8 +1498,6 @@ const people = {name: 'Albert', surname: 'Einstein'}
 
 Object.values(people) // ['Albert', 'Einstein']
 ```
-
-<a id='pegar valor-objeto-entries'></a>
 
 ### Pegar valor do objeto com entries
 
@@ -1710,8 +1507,6 @@ Object.values(people) // ['Albert', 'Einstein']
 const people = {name: 'Albert', surname: 'Einstein'}
 console.log(Object.entries(people)) // ['name', 'Albert'], ['surname', 'Einstein']
 ```
-
-<a id='prototypes'></a>
 
 ## Prototypes 
 
@@ -1728,8 +1523,6 @@ People.prototype.completeName = function(){
 }
 ```
 
-<a id='manipulacao-prototype'></a>
-
 ### Manipulação de prototype
 
 ```js
@@ -1740,8 +1533,6 @@ const object_B = { keyExample_B: 'ExampleB'}
 Object.setPrototypeOf(object_B, object_A)
 object_B.keyExample_A // 'ExampleA'
 ```
-
-<a id='copiar-objeto-prototype'></a>
 
 ### Criando objeto pelo prototype
 
@@ -1765,8 +1556,6 @@ const example = Object.create(People.prototype, {
 example // People {newKey: 'Example'}
 example.getName() // Here return name
 ```
-
-<a id='herança'></a>
 
 ## Herança
 
@@ -1801,13 +1590,9 @@ Camiseta.prototype.aumento = function(parameters){
 }
 ```
 
-<a id='polimorfismo'></a>
-
 ## Polimorfismo
 
 > Fazer uma classe filha se comportar de forma diferente do pai (Sobreescrita de métodos)
-
-<a id='factory-functions-prototype'></a>
 
 ## Factory Functions + Prototype
 
@@ -1826,8 +1611,6 @@ function createGenius(name, surname) {
 }
 const people = createGenius('Albert', 'Einstein')
 ```
-
-<a id='composing-mixing'></a>
 
 ## Composing / Mixing 
 
@@ -1851,8 +1634,6 @@ function createGenius(name, surname) {
 const people = createGenius('Albert', 'Einstein')
 ```
 
-<a id='objet-map'></a>
-
 ## Object map
 
 ```javascript
@@ -1871,8 +1652,6 @@ console.log(newGenius)
 console.log(newGenius.get('Albert'))
 ```
 
-<a id='class'></a>
-
 # Class
 
 > Cara que maravilha linkar os prototypes aqui
@@ -1890,8 +1669,6 @@ class People {
 }
 const people = new People()
 ```
-
-<a id='getter-setter-class'></a>
 
 ## Getter & Setter
 
@@ -1920,8 +1697,6 @@ car.velocity = 50
 car.velocity // 50 
 ```
 
-<a id='herança-class'></a>
-
 ## Herança com classes
 
 ```javascript
@@ -1947,8 +1722,6 @@ class People extends Genius{
     }
 }
 ```
-
-<a id='metodos-estaticos'></a>
 
 ## Metodos estaticos
 
