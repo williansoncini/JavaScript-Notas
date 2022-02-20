@@ -64,6 +64,7 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
   - [Obter valores do array](#obter-valores-do-array)
   - [Mudando os valores do array](#mudando-os-valores-do-array)
   - [Passando valores entre arrays](#passando-valores-entre-arrays)
+    - [Atribuição via desestruturação (Arrays)](#atribuição-via-desestruturação-arrays)
   - [Comprimento do array - length](#comprimento-do-array---length)
   - [Inserir valores no array - push/unshift](#inserir-valores-no-array---pushunshift)
   - [Romover valores do array - pop/shift/delete](#romover-valores-do-array---popshiftdelete)
@@ -92,6 +93,7 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
 - [Objetos](#objetos)
   - [Criar objeto](#criar-objeto)
   - [Acessar valores do objeto](#acessar-valores-do-objeto)
+  - [Atribuição via desestruturação (Objetos)](#atribuição-via-desestruturação-objetos)
   - [Fabrica de objetos](#fabrica-de-objetos)
   - [Factory Functions](#factory-functions)
     - [Utilizando Getter](#utilizando-getter)
@@ -120,90 +122,84 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
   - [Getter & Setter](#getter--setter)
   - [Herança com classes](#herança-com-classes)
   - [Metodos estaticos](#metodos-estaticos)
-    - [Valores primitivos e por referencia](#valores-primitivos-e-por-referencia)
-      - [Valores primitivos (imutaveis)](#valores-primitivos-imutaveis)
-      - [Valores do referencia (mutavel)](#valores-do-referencia-mutavel)
-  - [window.document](#windowdocument)
-  - [Seção 3 - JavaScript Lógica de programação](#seção-3---javascript-lógica-de-programação)
-    - [Operações de comparação](#operações-de-comparação)
-    - [Operadores lógicos](#operadores-lógicos)
-    - [Avaliação de curto circuito (Short-circuit)](#avaliação-de-curto-circuito-short-circuit)
-      - [Valores que avalião em false](#valores-que-avalião-em-false)
-      - [Operador && and](#operador--and)
-      - [Operador || or](#operador--or)
-    - [Estruturas condicionais](#estruturas-condicionais)
-      - [if else if e else](#if-else-if-e-else)
-      - [Avaliação por curto-circuito](#avaliação-por-curto-circuito)
-      - [Operação ternario](#operação-ternario)
-    - [Objeto date](#objeto-date)
-      - [Obter ano, mes, dia, horas, minutos, segundos, milesimos](#obter-ano-mes-dia-horas-minutos-segundos-milesimos)
-      - [Formatar data](#formatar-data)
-    - [Switchs](#switchs)
-    - [Atribuição via desestruturação (Arrays)](#atribuição-via-desestruturação-arrays)
-    - [Atribuição via desestruturação (Objetos)](#atribuição-via-desestruturação-objetos)
-    - [Estrutura de repetição](#estrutura-de-repetição)
-      - [For](#for)
-      - [For in](#for-in)
-      - [For of](#for-of)
-    - [DOM - Document object model](#dom---document-object-model)
-      - [Seletores](#seletores)
-        - [Selecionar elemento](#selecionar-elemento)
-        - [Selecionar mais de um elemento](#selecionar-mais-de-um-elemento)
-        - [Buscar pai de um elemento](#buscar-pai-de-um-elemento)
-      - [Remover elmento](#remover-elmento)
-        - [remover pai do elemento](#remover-pai-do-elemento)
-      - [Pegar o texto de um elemento](#pegar-o-texto-de-um-elemento)
-      - [Eventos e listeners](#eventos-e-listeners)
-        - [Adicionar listener a um elemento](#adicionar-listener-a-um-elemento)
-        - [Selecionar element via evento](#selecionar-element-via-evento)
-      - [Criar elemento](#criar-elemento)
-      - [Inserir dados a elemento](#inserir-dados-a-elemento)
-        - [Inserir filhos em um elemento](#inserir-filhos-em-um-elemento)
-        - [Pegar estilos de elementos](#pegar-estilos-de-elementos)
-        - [Mudar estilos de um elemento](#mudar-estilos-de-um-elemento)
-    - [While do while](#while-do-while)
-      - [While](#while)
-      - [Do while](#do-while)
-    - [Break e continue](#break-e-continue)
-      - [Continue](#continue)
-      - [Break](#break)
-    - [Try Catch finally](#try-catch-finally)
-      - [Errors](#errors)
-    - [Interval e Time outs](#interval-e-time-outs)
-      - [setInterval](#setinterval)
-      - [setTimeout](#settimeout)
-    - [JSON](#json)
-      - [Passar para json](#passar-para-json)
-      - [Passar Json para um objeto JavaScript](#passar-json-para-um-objeto-javascript)
-    - [LocalStorage](#localstorage)
-      - [Salvar no localStorage](#salvar-no-localstorage)
-      - [Buscar dados](#buscar-dados)
-      - [Deletar do localStorage](#deletar-do-localstorage)
-    - [Promise](#promise)
-      - [Métodos uteis para promisses](#métodos-uteis-para-promisses)
-        - [Promise.all](#promiseall)
-        - [Promise race](#promise-race)
-        - [Promise resolve e reject](#promise-resolve-e-reject)
-        - [Async await](#async-await)
-    - [Requisições](#requisições)
-      - [XMLHttpRequest](#xmlhttprequest)
-      - [Fetch API](#fetch-api)
-      - [Axios](#axios)
-    - [Compiladores e transpiladores (Acho que é assim)](#compiladores-e-transpiladores-acho-que-é-assim)
-      - [Babel](#babel)
-        - [Instalação](#instalação)
-        - [Conversão de código](#conversão-de-código)
-        - [Automazar a conversão de código](#automazar-a-conversão-de-código)
-    - [WebPack](#webpack)
-      - [Instalação](#instalação-1)
-        - [configuração](#configuração)
-    - [Import & Export](#import--export)
-      - [Export](#export)
-      - [import](#import)
+- [Valores primitivos e por referencia](#valores-primitivos-e-por-referencia)
+  - [Valores primitivos (imutaveis)](#valores-primitivos-imutaveis)
+  - [Valores do referencia (mutavel)](#valores-do-referencia-mutavel)
+- [JavaScript Lógica de programação](#javascript-lógica-de-programação)
+  - [Operações de comparação](#operações-de-comparação)
+  - [Operadores lógicos](#operadores-lógicos)
+  - [Avaliação de curto circuito (Short-circuit)](#avaliação-de-curto-circuito-short-circuit)
+    - [Valores que avalião em false](#valores-que-avalião-em-false)
+    - [Operador && and](#operador--and)
+    - [Operador || or](#operador--or)
+- [Estruturas condicionais](#estruturas-condicionais)
+  - [if else if e else](#if-else-if-e-else)
+  - [Avaliação por curto-circuito](#avaliação-por-curto-circuito)
+  - [Operação ternario](#operação-ternario)
+- [Objeto date](#objeto-date)
+  - [Obter ano, mes, dia, horas, minutos, segundos, milesimos](#obter-ano-mes-dia-horas-minutos-segundos-milesimos)
+  - [Formatar data](#formatar-data)
+- [Switchs](#switchs)
+- [Estrutura de repetição](#estrutura-de-repetição)
+  - [For](#for)
+  - [For in](#for-in)
+  - [For of](#for-of)
+- [DOM - Document object model](#dom---document-object-model)
+  - [Seletores](#seletores)
+    - [Selecionar elemento](#selecionar-elemento)
+    - [Selecionar mais de um elemento](#selecionar-mais-de-um-elemento)
+    - [Buscar pai de um elemento](#buscar-pai-de-um-elemento)
+    - [Remover elemento](#remover-elemento)
+    - [remover pai do elemento](#remover-pai-do-elemento)
+    - [Pegar o texto de um elemento](#pegar-o-texto-de-um-elemento)
+  - [Eventos e listeners](#eventos-e-listeners)
+    - [Adicionar listener a um elemento](#adicionar-listener-a-um-elemento)
+    - [Selecionar element via evento](#selecionar-element-via-evento)
+  - [Criar elemento](#criar-elemento)
+    - [Inserir dados a elemento](#inserir-dados-a-elemento)
+    - [Inserir filhos em um elemento](#inserir-filhos-em-um-elemento)
+  - [Pegar estilos de elementos](#pegar-estilos-de-elementos)
+    - [Mudar estilos de um elemento](#mudar-estilos-de-um-elemento)
+- [While do while](#while-do-while)
+  - [While](#while)
+  - [Do while](#do-while)
+- [Break e continue](#break-e-continue)
+  - [Continue](#continue)
+  - [Break](#break)
+- [Try Catch finally](#try-catch-finally)
+- [Errors](#errors)
+- [Interval e Time outs](#interval-e-time-outs)
+  - [setInterval](#setinterval)
+  - [setTimeout](#settimeout)
+- [JSON](#json)
+  - [Passar para json](#passar-para-json)
+  - [Passar Json para um objeto JavaScript](#passar-json-para-um-objeto-javascript)
+- [LocalStorage](#localstorage)
+  - [Salvar no localStorage](#salvar-no-localstorage)
+  - [Buscar dados](#buscar-dados)
+  - [Deletar do localStorage](#deletar-do-localstorage)
+- [Promise](#promise)
+  - [Métodos uteis para promisses](#métodos-uteis-para-promisses)
+    - [Promise.all](#promiseall)
+    - [Promise race](#promise-race)
+    - [Promise resolve e reject](#promise-resolve-e-reject)
+  - [Async await](#async-await)
+- [Requisições](#requisições)
+  - [XMLHttpRequest](#xmlhttprequest)
+  - [Fetch API](#fetch-api)
+  - [Axios](#axios)
+- [Compiladores e transpiladores (Acho que é assim)](#compiladores-e-transpiladores-acho-que-é-assim)
+  - [Babel](#babel)
+  - [Instalação](#instalação)
+  - [Conversão de código](#conversão-de-código)
+  - [Automazar a conversão de código](#automazar-a-conversão-de-código)
+- [WebPack](#webpack)
+  - [Instalação](#instalação-1)
+  - [configuração](#configuração)
+- [Import & Export](#import--export)
+  - [Export](#export)
+  - [import](#import)
   
-
-
-
 # Console log
 
 ```js
@@ -777,6 +773,31 @@ array_1 // [1,2,3]
 array_2 // [1,2,123123123]
 ```
 
+### Atribuição via desestruturação (Arrays)
+
+```javascript
+//exemplo simples
+let a
+let b
+let c
+[a,b,c] = [1,2,3]
+a //1
+b //2
+c //3
+
+//desestruturação
+const numbers = [1,2,3,4]
+const [first, second, ...rest] = numbers
+first // 1
+second // 2
+rest // [3, 4]
+
+//pulando valores
+const [number1 , , number3] = numbers
+number1 // 1
+number3 // 3
+```
+
 > Esses ... que está antes de array_1 [...array_1] significa que todo o valor de array_1 será espalhado, e como no caso a variável array_2 está recebendo [...array_1], significa que o valor de array_1 será espalhado dentro de array_2.
 
 ## Comprimento do array - length
@@ -1251,6 +1272,39 @@ const people = {
 
 people.name // Albert
 people['name'] // Albert
+```
+
+## Atribuição via desestruturação (Objetos)
+
+```javascript
+const awesomePeople = {
+    name: 'Albert',
+    surname: 'Einstein',
+}
+
+const {name, surname} = awesomePeople
+// com valores padrões, para caso os valores não existam no objeto
+const {name='Albert', surname='Einstein'} = awesomePeople
+//mudar o nome das variaveis para não seguir os nomes dos atributos dos objetos
+const {name: sayYourName, surname: sayYourName} = awesomePeople
+sayYourName // 'Albert'
+sayYourSurname // 'Einstein'
+
+//another example
+
+const people = {
+    name: 'name',
+    address: {
+        street: 'california',
+        number: 124
+    },
+    age: 10
+}
+
+const {name, address:{street}, ...rest} = people
+name // 'name'
+street // 'california'
+rest // age: 10
 ```
 
 ## Fabrica de objetos
@@ -1746,9 +1800,9 @@ class Genius{
 Genius.sayHelloToEverybody() // Hello world
 ```
 
-### Valores primitivos e por referencia
+# Valores primitivos e por referencia
 
-#### Valores primitivos (imutaveis)
+## Valores primitivos (imutaveis)
 
 > Esses valores criam uma nova cópia quando são copiados
 
@@ -1767,21 +1821,7 @@ a[0] = 20 //Isso não muda o valor
 a // 10
 ```
 
-> Para que os valores por referencia não apontem para o mesmo lugar da memoria, você pode fazer da forma abaixo
-
-```javascript
-//vou usar array, mas funciona da mesma forma se utilizar objeto
-const original = ['Albert', 'Nikolas'] 
-const duplicate = [...users]
-
-//Dessa forma se você alterar duplicate, original não sera alterado
-
-duplicate.push('Leonardo')
-original // ['Albert', 'Nikolas']
-duplicate // ['Albert', 'Nikolas', 'Leonardo']
-```
-
-#### Valores do referencia (mutavel)
+## Valores do referencia (mutavel)
 
 > Esses valores apontam para o mesmo lugar da memória quando são copiados
 
@@ -1796,16 +1836,9 @@ teste[0] = 50
 teste // [50,2,3]
 ```
 
-## window.document
+# JavaScript Lógica de programação
 
-```js
-document.body.innerHTML = 'teste'
-document.body.innerHTML += 'teste <br/>'
-```
-
-## Seção 3 - JavaScript Lógica de programação
-
-### Operações de comparação
+## Operações de comparação
 
 -  \> Maior que
 -  < Menor que
@@ -1816,7 +1849,7 @@ document.body.innerHTML += 'teste <br/>'
 -  != Diferença
 -  !== Diferença estrita - Checa valor e tipo (Recomendado)
 
-### Operadores lógicos
+## Operadores lógicos
 
 - && (and - e)
 - || (or - ou)
@@ -1851,11 +1884,11 @@ false //false
 !!!false //true
 ```
 
-### Avaliação de curto circuito (Short-circuit)
+## Avaliação de curto circuito (Short-circuit)
 
 > Retorno de valores e operações lógicas
 
-#### Valores que avalião em false
+### Valores que avalião em false
 
 - false
 - 0
@@ -1864,7 +1897,7 @@ false //false
 - undefined
 - NaN
 
-#### Operador && and
+### Operador && and
 
 > false - Retorna o valor falso quando for encontrado
 > 
@@ -1874,17 +1907,17 @@ false //false
 //false
 'Luiz Otavio' && 0 && 'Maria' // 0 pois 0 avalia em falso
 //true
-'Luiz' && 'Willian' && 'Maria' // Maria - Retorna o ultimo valor avaliado
+'Luiz' && 'Albert' && 'Maria' // Maria - Retorna o ultimo valor avaliado
 ```
 
-#### Operador || or
+### Operador || or
 
 > Retorna o primeiro valore verdadeiro encontrado
 > 
 > Caso não haja valor verdadeiro, retorna o ultimo valor falso encontrado
 
 ```javascript
-false || false || 'Willian' || true // 'Willian' - Pois Willian é o primeiro resultado verdadeiro encontrado
+false || false || 'Albert' || true // 'Albert' - Pois Albert é o primeiro resultado verdadeiro encontrado
 ```
 
 Exemplos de validação
@@ -1894,9 +1927,9 @@ const corPadrao = cor || '#fcfcfc'
 corPadrão // '#fcfcfc' - Pois '' é avaliado como false
 ```
 
-### Estruturas condicionais
+# Estruturas condicionais
 
-#### if else if e else
+## if else if e else
 
 - If pode ser utilizado sozinho
 - Para se usar else, é necessário ter um if antes
@@ -1935,7 +1968,7 @@ if (num > 9){
 }
 ```
 
-#### Avaliação por curto-circuito
+## Avaliação por curto-circuito
 
 > É utilizada para tomar uma ação somente quando a condição for verdadeira. Esse método de avaliação não aceita else.
 
@@ -1945,7 +1978,9 @@ condition && trueLogic
 1 === 1 && console.log('True') // true
 ```
 
-#### Operação ternario
+## Operação ternario
+
+Esse é delinha!
 
 > Pode substituir parte do código com condicionais mais simples
 
@@ -1955,7 +1990,7 @@ condition ? true : false
 5 > 10 ? 'Maior' : 'Menor'
 ```
 
-### Objeto date
+# Objeto date
 
 ```javascript
 const data = new Date() // Data atual por padrão
@@ -1967,7 +2002,7 @@ new Date(Date.now()) // Data atual
 //data.toString()
 ```
 
-#### Obter ano, mes, dia, horas, minutos, segundos, milesimos
+## Obter ano, mes, dia, horas, minutos, segundos, milesimos
 
 ```js
 const data = new Date()
@@ -1981,7 +2016,7 @@ data.getMilliseconds() //milesimos
 data.getDay() //dia da semana - 0 Domingo - Sábado
 ```
 
-#### Formatar data
+## Formatar data
 
 ```javascript
 const data = new Date()
@@ -1993,7 +2028,7 @@ data.toLocaleTimeString('pt-BR', {
 }) // 00/00/00 00:00:00
 ```
 
-### Switchs
+# Switchs
 
 ```js
 switch (variable){
@@ -2009,71 +2044,13 @@ switch (variable){
 }
 ```
 
-### Atribuição via desestruturação (Arrays)
-
-```javascript
-//exemplo simples
-let a
-let b
-let c
-[a,b,c] = [1,2,3]
-a //1
-b //2
-c //3
-
-//desestruturação
-const numbers = [1,2,3,4]
-const [first, second, ...rest] = numbers
-first // 1
-second // 2
-rest // [3, 4]
-
-//pulando valores
-const [number1 , , number3] = numbers
-number1 // 1
-number3 // 3
-```
-
-### Atribuição via desestruturação (Objetos)
-
-```javascript
-const awesomePeople = {
-    name: 'Albert',
-    surname: 'Einstein',
-}
-
-const {name, surname} = awesomePeople
-// com valores padrões, para caso os valores não existam no objeto
-const {name='Albert', surname='Einstein'} = awesomePeople
-//mudar o nome das variaveis para não seguir os nomes dos atributos dos objetos
-const {name: sayYourName, surname: sayYourName} = awesomePeople
-sayYourName // 'Albert'
-sayYourSurname // 'Einstein'
-
-//another example
-
-const people = {
-    name: 'name',
-    address: {
-        street: 'california',
-        number: 124
-    },
-    age: 10
-}
-
-const {name, address:{street}, ...rest} = people
-name // 'name'
-street // 'california'
-rest // age: 10
-```
-
-### Estrutura de repetição
+# Estrutura de repetição
 
 - For clássico - Geralmente com iteráveis (Array ou string)
 - For in - Retorna o indice ou chave (string, array, objetos)
 - For of - Retorna o valor (iteráveis, arrays ou string)
 
-#### For
+## For
 
 ```javascript
 for (let i = 0; i > length; i++){
@@ -2081,7 +2058,7 @@ for (let i = 0; i > length; i++){
 }
 ```
 
-#### For in
+## For in
 
 ```javascript
 const names = ['Albert', 'Nikola', 'Thomas']
@@ -2105,7 +2082,7 @@ for (let key in people){
 }
 ```
 
-#### For of
+## For of
 
 ```javascript
 for (let value of list){
@@ -2130,7 +2107,7 @@ for (let people of peoples){
 
 ```
 
-### DOM - Document object model
+# DOM - Document object model
 
 > Estrutura básica do DOM
 > 
@@ -2138,9 +2115,9 @@ for (let people of peoples){
 
 > O Dom possui uma api que nos permite interagir com ele. Podemos criar e modificar os dados que estão dentro dele
 
-#### Seletores
+## Seletores
 
-##### Selecionar elemento
+### Selecionar elemento
 
 ```javascript
 document.getElementById('id')
@@ -2148,7 +2125,7 @@ document.querySelector('#id') //mais moderno
 document.querySelector('.class') //mais moderno
 ```
 
-##### Selecionar mais de um elemento
+### Selecionar mais de um elemento
 ```javascript
 documet.querySelectorAll('element')
 // Example
@@ -2163,37 +2140,37 @@ container.querySelectorAll('p') // Get all p's inside in container
 container.classList.container('class')
 ```
 
-##### Buscar pai de um elemento
+### Buscar pai de um elemento
 
 ```javascript
 const element = document.qurySelector('p')
 element.parentElement // elemento pai
 ```
 
-#### Remover elmento
+### Remover elemento
 
 ```javascript
 const element = document.querySelector('element')
 element.remove()
 ```
 
-##### remover pai do elemento
+### remover pai do elemento
 
 ```javascript
 const element = document.querySelector('element')
 element.parentElement.remove()
 ```
 
-#### Pegar o texto de um elemento
+### Pegar o texto de um elemento
 
 ```javascript
 const element = document.querySelector('element')
 element.innerText //Return text
 ```
 
-#### Eventos e listeners
+## Eventos e listeners
 
-##### Adicionar listener a um elemento
+### Adicionar listener a um elemento
 
 ```js
 const input = document.querySelector('.input')
@@ -2206,7 +2183,7 @@ const input = document.querySelector('.input')
 input.addEventListener('click', () => console.log('teste'))
 ```
 
-##### Selecionar element via evento
+### Selecionar element via evento
 
 ```javascript
 document.addEventLister('click', (event) => {
@@ -2219,7 +2196,7 @@ const container = document.querySelector('.container')
 
 ```
 
-#### Criar elemento
+## Criar elemento
 
 ```javascript
 document.createElement('element')
@@ -2233,7 +2210,7 @@ const textNode = document.createTextNode('text')
 p.appedChild(textNode) // inserir o texto na tag p
 ```
 
-#### Inserir dados a elemento
+### Inserir dados a elemento
 
 ```javascript
 const example = document.querySelector('#id')
@@ -2241,7 +2218,7 @@ example.innerHTML = 'html'
 axample.innerText = 'text'
 ```
 
-##### Inserir filhos em um elemento
+### Inserir filhos em um elemento
 
 - appendChild(element)
 
@@ -2255,7 +2232,7 @@ p.classList.add('class-name')
 example.appendChild(p)
 ```
 
-##### Pegar estilos de elementos
+## Pegar estilos de elementos
 
 ```javascript
 const styleBody = getComputedStyle(document.body) // get all styles of body
@@ -2265,7 +2242,7 @@ const styleBody = getComputedStyle(document.body) // get all styles of body
 styleBody.backgroundColor // background of body 
 ```
 
-##### Mudar estilos de um elemento
+### Mudar estilos de um elemento
 
 ```javascript
 //Exemplo de mudança de cor
@@ -2273,9 +2250,9 @@ const element = document.querySelector('.class')
 element.style.backgroundColor = 'red' // mudar a cor
 ```
 
-### While do while
+# While do while
 
-#### While
+## While
 
 > Checa a condição e depois entra no laço de repetição
 
@@ -2286,7 +2263,7 @@ while (i <= 10){
 }
 ```
 
-#### Do while
+## Do while
 
 > Entra pelo menos uma vez no laço e depois checa a condição
 
@@ -2296,14 +2273,14 @@ do {
 } while (condition)
 ```
 
-### Break e continue
+# Break e continue
 
 > Controle do laço. Funciona em todos os laços
 
 - Break - Parar o laço
 - Continue - Passar o laço para a próxima entrada
 
-#### Continue
+## Continue
 
 ```javascript
 const nums = [1,2,3]
@@ -2316,7 +2293,7 @@ for (let num of nums){
 }
 ```
 
-#### Break
+## Break
 
 ```javascript
 const nums = [1,2,3]
@@ -2328,7 +2305,7 @@ for (let num of nums){
 }
 ```
 
-### Try Catch finally
+# Try Catch finally
 
 ```javascript
 try{
@@ -2340,7 +2317,7 @@ try{
 }
 ```
 
-#### Errors 
+# Errors 
 
 ```javascript
 throw new Error('message')
@@ -2350,9 +2327,9 @@ if (typeof number !== 'number')
     throw new Error('Precisa ser número')
 ```
 
-### Interval e Time outs
+# Interval e Time outs
 
-#### setInterval
+## setInterval
 
 > Executa função em tempos definidos
 
@@ -2362,7 +2339,7 @@ setInterval(function, milliseconds)
 setInterval(() => console.log('teste'), 1000)
 ```
 
-#### setTimeout
+## setTimeout
 
 > Define um tempo de expiração para um intervalo
 
@@ -2376,9 +2353,9 @@ setTimeout(() => {
 }, 5000)
 ```
 
-### JSON
+# JSON
 
-#### Passar para json
+## Passar para json
 
 ```javascript
 const tasks = [1,2,3,4]
@@ -2386,7 +2363,7 @@ const tasksJson = JSON.stringify(tasks)
 tasksJson = [] // '[1,2,3,4]'
 ```
 
-#### Passar Json para um objeto JavaScript
+## Passar Json para um objeto JavaScript
 
 ```javascript
 const tasks = [1,2,3,4]
@@ -2397,11 +2374,11 @@ const realTasks = JSON.parse(tasksJson)
 realTasks // [1,2,3,4]
 ```
 
-### LocalStorage
+# LocalStorage
 
 > Base de dados do navegdor
 
-#### Salvar no localStorage
+## Salvar no localStorage
 
 ```javascript
 localstorage.setItem('name', string)
@@ -2411,19 +2388,19 @@ const arrayJson = JSON.stringify(array)
 localStorage.setItem('array', arrayJson)
 ```
 
-#### Buscar dados
+## Buscar dados
 
 ```javascript
 localStorage.getItem('name-item')
 ```
 
-#### Deletar do localStorage
+## Deletar do localStorage
 
 ```javascript
  
 ```
 
-### Promise
+# Promise
 
 - Pending
 - fullfilled - Resolvida
@@ -2460,9 +2437,9 @@ esperaAi('Frase 1', 1000)
     })
 ```
 
-#### Métodos uteis para promisses
+## Métodos uteis para promisses
 
-##### Promise.all
+### Promise.all
 
 > Resolve promessas em sequencia e retorna um array com os resultados
 
@@ -2492,7 +2469,7 @@ Promise.all(promisses)
 // ['Frase 1', 'Frase 2', 'Frase 3']
 ```
 
-##### Promise race
+### Promise race
 
 > Retorna o primeiro valor que for resolvido
 
@@ -2520,7 +2497,7 @@ Promise.race(promisses)
     .catch(error => console.log(error))
 ```
 
-##### Promise resolve e reject
+### Promise resolve e reject
 
 > Retorna uma promise resolvida
 
@@ -2540,7 +2517,7 @@ emCache()
     .catch(mensagem => console.log(mensagem))
 ```
 
-##### Async await
+## Async await
 
 > Método para facilitar resolver promessas de moto sincrono
 
@@ -2575,11 +2552,11 @@ async function executa(){
 executa()
 ```
 
-### Requisições
+# Requisições
 
 > Utilização de requisições AJAX
 
-#### XMLHttpRequest
+## XMLHttpRequest
 
 > Quase não se usa mais, pois o Axios está dominando geral
 
@@ -2592,7 +2569,7 @@ xhr.send()
 xhr.status // 200
 ```
 
-#### Fetch API
+## Fetch API
 
 > Maneira simples de fazer requisições
 
@@ -2606,7 +2583,7 @@ fetch('https://www.google.com')
     .then(html => console.log(html))
 ```
 
-#### Axios
+## Axios
 
 > Ele não é nativo do JS então precisa entrar na Doc dele no Github e baixar por lá
 
@@ -2616,25 +2593,25 @@ fetch('https://www.google.com')
 axios('target').then().catch()
 ```
 
-### Compiladores e transpiladores (Acho que é assim)
+# Compiladores e transpiladores (Acho que é assim)
 
-#### Babel
+## Babel
 
 [Documentação](https://babeljs.io/docs/en/)
 
-##### Instalação
+## Instalação
 
 ```js
 npm install --save-dev  @babel/cli @babel/preset-env @babel/core
 ```
 
-##### Conversão de código
+## Conversão de código
 
 ```javascript
 npx babel main.js -o bundle.js --presets=@babel/env
 ```
 
-##### Automazar a conversão de código
+## Automazar a conversão de código
 
 > Dentro do arquivo package.json, na linha de scripts
 
@@ -2642,9 +2619,9 @@ npx babel main.js -o bundle.js --presets=@babel/env
 "babel": "babel ./main.js -o ./bundle.js --presets=@babel/env -w"
 ```
 
-### WebPack
+# WebPack
 
-#### Instalação
+## Instalação
 
 ```js
 npm i --save-dev @babel/preset-env @babel/cli @babel/core babel-loader webpack webpack-cli 
@@ -2655,7 +2632,7 @@ npm i style-loader css-loader
 
 ```
 
-##### configuração
+## configuração
 
 > Dentro do arquivo webpack.config.js
 
@@ -2693,11 +2670,11 @@ module.exports = {
 }
 ```
 
-### Import & Export
+# Import & Export
 
 > Cara, existem várias formas. Irei listar as mais usada abaixo, mas é bom ver a doc :3
 
-#### Export
+## Export
 
 ```javascript
 const name = 'Albert'
@@ -2709,7 +2686,7 @@ export const name = 'Albert'
 export {name as genius, surname as default}
 ```
 
-#### import
+## import
 
 ```javascript
 import { name } from './path/file_name'
@@ -2719,7 +2696,3 @@ import anyName from './path/file_name'
 import { name, surname as surnameOfGenius} from './path/file_name'
 import defaultModule { surnameOfGenius } from './path/file_name'
 ```
-
-
-
-
