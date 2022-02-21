@@ -142,8 +142,13 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
 - [Switchs](#switchs)
 - [Estrutura de repetição](#estrutura-de-repetição)
   - [For](#for)
-  - [For in](#for-in)
-  - [For of](#for-of)
+    - [For in](#for-in)
+    - [For of](#for-of)
+  - [While](#while)
+    - [Do while](#do-while)
+  - [Break e continue](#break-e-continue)
+    - [Continue](#continue)
+    - [Break](#break)
 - [DOM - Document object model](#dom---document-object-model)
   - [Seletores](#seletores)
     - [Selecionar elemento](#selecionar-elemento)
@@ -160,12 +165,6 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
     - [Inserir filhos em um elemento](#inserir-filhos-em-um-elemento)
   - [Pegar estilos de elementos](#pegar-estilos-de-elementos)
     - [Mudar estilos de um elemento](#mudar-estilos-de-um-elemento)
-- [While do while](#while-do-while)
-  - [While](#while)
-  - [Do while](#do-while)
-- [Break e continue](#break-e-continue)
-  - [Continue](#continue)
-  - [Break](#break)
 - [Try Catch finally](#try-catch-finally)
 - [Errors](#errors)
 - [Interval e Time outs](#interval-e-time-outs)
@@ -188,7 +187,10 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
   - [XMLHttpRequest](#xmlhttprequest)
   - [Fetch API](#fetch-api)
   - [Axios](#axios)
-- [Compiladores e transpiladores (Acho que é assim)](#compiladores-e-transpiladores-acho-que-é-assim)
+- [Import & Export](#import--export)
+  - [Export](#export)
+  - [import](#import)
+- [Compiladores e transpiladores](#compiladores-e-transpiladores)
   - [Babel](#babel)
   - [Instalação](#instalação)
   - [Conversão de código](#conversão-de-código)
@@ -196,9 +198,6 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
 - [WebPack](#webpack)
   - [Instalação](#instalação-1)
   - [configuração](#configuração)
-- [Import & Export](#import--export)
-  - [Export](#export)
-  - [import](#import)
   
 # Console log
 
@@ -2058,7 +2057,7 @@ for (let i = 0; i > length; i++){
 }
 ```
 
-## For in
+### For in
 
 ```javascript
 const names = ['Albert', 'Nikola', 'Thomas']
@@ -2082,7 +2081,7 @@ for (let key in people){
 }
 ```
 
-## For of
+### For of
 
 ```javascript
 for (let value of list){
@@ -2107,6 +2106,59 @@ for (let people of peoples){
 
 ```
 
+## While
+
+Checa a condição e depois entra no laço de repetição
+
+```javascript
+while (i <= 10){
+    //logic
+    i++;
+}
+```
+
+### Do while
+
+Entra pelo menos uma vez no laço e depois checa a condição
+
+```javascript
+do {
+    //logic
+} while (condition)
+```
+
+## Break e continue
+
+> Controle do laço. Funciona em todos os laços
+
+- Break - Parar o laço
+- Continue - Passar o laço para a próxima entrada
+
+### Continue
+
+```javascript
+const nums = [1,2,3]
+
+for (let num of nums){
+    //pulando o console.log do número dois
+    if (num === 2)
+        continue
+    console.log(num)
+}
+```
+
+### Break
+
+```javascript
+const nums = [1,2,3]
+
+for (let num of nums){
+    //Parando o laço quando encontrar o número dois
+    if (num === 2)
+        break
+}
+```
+
 # DOM - Document object model
 
 > Estrutura básica do DOM
@@ -2128,16 +2180,16 @@ document.querySelector('.class') //mais moderno
 ### Selecionar mais de um elemento
 ```javascript
 documet.querySelectorAll('element')
-// Example
+// Exemplo
 const elements = document.querySelectorAll('p')
 elements // NodeArray p's
 
-//another example
+// Outro exemplo
 const container = document.querySelector('.container')
 container.querySelectorAll('p') // Get all p's inside in container
 
-//Select with contains
-container.classList.container('class')
+// Selecionar com contains
+container.classList.contains('class')
 ```
 
 ### Buscar pai de um elemento
@@ -2178,7 +2230,7 @@ input.addEventListener('event', function(event){
   //logic  
 })
 
-//Example
+// Exemplo 
 const input = document.querySelector('.input')
 input.addEventListener('click', () => console.log('teste'))
 ```
@@ -2189,11 +2241,6 @@ input.addEventListener('click', () => console.log('teste'))
 document.addEventLister('click', (event) => {
     const element = event.target
 })
-```
-
-```js
-const container = document.querySelector('.container')
-
 ```
 
 ## Criar elemento
@@ -2235,11 +2282,9 @@ example.appendChild(p)
 ## Pegar estilos de elementos
 
 ```javascript
-const styleBody = getComputedStyle(document.body) // get all styles of body
-
-//get background of body
-
-styleBody.backgroundColor // background of body 
+const styleBody = getComputedStyle(document.body) // pegar estilo do body
+// Pegar o background 
+styleBody.backgroundColor // 'ffffff'
 ```
 
 ### Mudar estilos de um elemento
@@ -2248,61 +2293,6 @@ styleBody.backgroundColor // background of body
 //Exemplo de mudança de cor
 const element = document.querySelector('.class')
 element.style.backgroundColor = 'red' // mudar a cor
-```
-
-# While do while
-
-## While
-
-> Checa a condição e depois entra no laço de repetição
-
-```javascript
-while (i <= 10){
-    //logic
-    i++;
-}
-```
-
-## Do while
-
-> Entra pelo menos uma vez no laço e depois checa a condição
-
-```javascript
-do {
-    //logic
-} while (condition)
-```
-
-# Break e continue
-
-> Controle do laço. Funciona em todos os laços
-
-- Break - Parar o laço
-- Continue - Passar o laço para a próxima entrada
-
-## Continue
-
-```javascript
-const nums = [1,2,3]
-
-for (let num of nums){
-    //pulando o console.log do número dois
-    if (num === 2)
-        continue
-    console.log(num)
-}
-```
-
-## Break
-
-```javascript
-const nums = [1,2,3]
-
-for (let num of nums){
-    //Parando o laço quando encontrar o número dois
-    if (num === 2)
-        break
-}
 ```
 
 # Try Catch finally
@@ -2331,7 +2321,7 @@ if (typeof number !== 'number')
 
 ## setInterval
 
-> Executa função em tempos definidos
+Executa função em um periodo de tempo definido
 
 ```javascript
 setInterval(function, milliseconds)
@@ -2341,7 +2331,7 @@ setInterval(() => console.log('teste'), 1000)
 
 ## setTimeout
 
-> Define um tempo de expiração para um intervalo
+Define um tempo de expiração para um intervalo
 
 ```javascript
 //Criando uma função para executar em um intervalo
@@ -2382,7 +2372,7 @@ realTasks // [1,2,3,4]
 
 ```javascript
 localstorage.setItem('name', string)
-//example
+//Exemplo
 const array = [1,2,3]
 const arrayJson = JSON.stringify(array)
 localStorage.setItem('array', arrayJson)
@@ -2397,7 +2387,7 @@ localStorage.getItem('name-item')
 ## Deletar do localStorage
 
 ```javascript
- 
+localStorage.removeItem('keyName')
 ```
 
 # Promise
@@ -2519,7 +2509,7 @@ emCache()
 
 ## Async await
 
-> Método para facilitar resolver promessas de moto sincrono
+> Método para facilitar resolver promessas de modo sincrono
 
 ```javascript
 function esperaAi(msg, tempo) {
@@ -2538,7 +2528,7 @@ function esperaAi(msg, tempo) {
 async function executa(){
     // Para capturar as rejeições é necessário utilizar try catch
     try{
-          const frase1 = await esperaAi('Frase 1', 1000)
+        const frase1 = await esperaAi('Frase 1', 1000)
         console.log(frase1)
         const frase2 = await esperaAi('Frase 2', 2000)
         console.log(frase2)
@@ -2593,7 +2583,34 @@ fetch('https://www.google.com')
 axios('target').then().catch()
 ```
 
-# Compiladores e transpiladores (Acho que é assim)
+# Import & Export
+
+> Cara, existem várias formas. Irei listar as mais usada abaixo, mas é bom ver a doc :3
+
+## Export
+
+```javascript
+const name = 'Albert'
+const surname = 'Einstein'
+export name
+export default name
+export name as genius
+export const name = 'Albert'
+export {name as genius, surname as default}
+```
+
+## import
+
+```javascript
+import { name } from './path/file_name'
+// If have export default
+import anyName from './path/file_name'
+
+import { name, surname as surnameOfGenius} from './path/file_name'
+import defaultModule { surnameOfGenius } from './path/file_name'
+```
+
+# Compiladores e transpiladores
 
 ## Babel
 
@@ -2629,7 +2646,6 @@ npm i core-js regenerator-
 
 // loader para css
 npm i style-loader css-loader
-
 ```
 
 ## configuração
@@ -2668,31 +2684,4 @@ module.exports = {
     },
     devtool: 'source-map'
 }
-```
-
-# Import & Export
-
-> Cara, existem várias formas. Irei listar as mais usada abaixo, mas é bom ver a doc :3
-
-## Export
-
-```javascript
-const name = 'Albert'
-const surname = 'Einstein'
-export name
-export default name
-export name as genius
-export const name = 'Albert'
-export {name as genius, surname as default}
-```
-
-## import
-
-```javascript
-import { name } from './path/file_name'
-// If have export default
-import anyName from './path/file_name'
-
-import { name, surname as surnameOfGenius} from './path/file_name'
-import defaultModule { surnameOfGenius } from './path/file_name'
 ```
