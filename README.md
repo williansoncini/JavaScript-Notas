@@ -70,7 +70,7 @@ Galera abaixo está algumas notas de JavaScript que fiz mediante ao aprendizado 
   - [Romover valores do array - pop/shift/delete](#romover-valores-do-array---popshiftdelete)
   - [Fatiar um array - slice](#fatiar-um-array---slice)
   - [Checkar instancia de array](#checkar-instancia-de-array)
-  - [Remover e inserir valores - Splice](#remover-e-inserir-valores---splice)
+  - [Retirar valores de um determinado range - Splice](#retirar-valores-de-um-determinado-range---splice)
   - [Concatenar array](#concatenar-array)
   - [Filtrar o array](#filtrar-o-array)
   - [Mapear o array](#mapear-o-array)
@@ -281,7 +281,7 @@ typeof nome, numer // string number
 
 ## Valores por referencia
 
-Aqui os valores trabalham como ponteiros, onde uma variavel aponta para o mesmo endereço de memória que a outra. Dessa forma quando uma variavel que faz referencia (ponteiro) a outra for alterada, tanto a variavél ponteiro quanto a varaivel referenciada será alterada.
+Aqui os valores trabalham como ponteiros, onde uma variavel aponta para o mesmo endereço de memória que a outra. Dessa forma quando uma variavel que faz referencia a outra for alterada, tanto a variavél ponteiro quanto a varaivel referenciada será alterada.
 
 Confuso? Dale exemplo abaixo :)
 
@@ -468,7 +468,7 @@ valor.lastIndexOf('s') // 2
 
 ## concat
 
-Usado para juntar textos
+Usado para juntar as coisas - Concatenar
 
 ```js
 'string' + 'string' // Primeira forma
@@ -496,7 +496,7 @@ Usado para trocar valores
 
 ## length
 
-Pegar o comprimento da string (Conta a quantidade de caracteres)
+Pegar o comprimento das coisas
 
 ```javascript
 'teste'.length //5
@@ -504,7 +504,7 @@ Pegar o comprimento da string (Conta a quantidade de caracteres)
 
 ## slice
 
-Usado para buscar um range de caracteres
+Quando a string é fatiada pelo metodo slice, ela não tem o seu valor realmente modificado,  slice apenas retorna os valores entre o intervalo que você informar.
 
 ```javascript
 'teste'.slice(2,4) // 's'
@@ -630,6 +630,12 @@ Number.isNaN(num) //false
 ```
 
 ## Padrão de calculo - IEEE 754-2008
+
+Toma cuidado com calculos aqui, que o bixo não é tão preciso @-@
+
+> Até a nubank teve problema com isso
+
+**Tem que lascar tratativas**
 
 ```javascript
 let num1 = 0.1
@@ -859,9 +865,9 @@ const users = ['Albert', 'Nikola']
 users instanceof Array // true
 ```
 
-## Remover e inserir valores - Splice
+## Retirar valores de um determinado range - Splice
 
-Esse método pode remover ou inserir valores.
+Esse método retira os valores do range que você selecionar. Com isso você pode descartar esses valores ou utiliza-los posteriormente.
 
 ```javascript
 // array.splice(posicao_inicial, quantidade_elementos_a_deletar, addElement, addElement, addElement)
@@ -955,7 +961,7 @@ arrayWithNames // ['Albert', 'Nikola']
 
 ## Reduce
 
-Permite você por todas as posições, e também ter um único retorno. Por exemplo fazer a soma de todos os valores dentro do array, aqui teremos um unico retorno que será o valor total.
+Permite você passar por todas as posições, e também ter um único retorno. Por exemplo fazer a soma de todos os valores dentro do array, aqui teremos um unico retorno que será o valor total.
 
 > Reduzir array a um elemento
 
@@ -1098,8 +1104,8 @@ const sayHello = () => console.log('Hello')
 ## Passando função como parametro
 
 ```javascript
-const sayHello = () console.log('Hello')
-const talking = (sayHello) => sayHello()
+const sayHello = () => console.log('Hello')
+sayHello()
 ```
 
 ## Arguments
@@ -2195,7 +2201,7 @@ container.classList.contains('class')
 ### Buscar pai de um elemento
 
 ```javascript
-const element = document.qurySelector('p')
+const element = document.querySelector('p')
 element.parentElement // elemento pai
 ```
 
@@ -2489,7 +2495,10 @@ Promise.race(promisses)
 
 ### Promise resolve e reject
 
-> Retorna uma promise resolvida
+> Retorna uma promise resolvida ou a rejeição dela
+
+- Resolve = Quando da tudo certo
+- Reject = Quando da ruim
 
 ```javascript
 function emCache(){
@@ -2510,6 +2519,8 @@ emCache()
 ## Async await
 
 > Método para facilitar resolver promessas de modo sincrono
+
+O await é tudo de bom!
 
 ```javascript
 function esperaAi(msg, tempo) {
@@ -2576,6 +2587,8 @@ fetch('https://www.google.com')
 ## Axios
 
 > Ele não é nativo do JS então precisa entrar na Doc dele no Github e baixar por lá
+
+> Mas em algums frameworks ele já vem no pacote :3
 
 [GitHub](https://github.com/axios/axios)
 
